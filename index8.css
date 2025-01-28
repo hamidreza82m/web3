@@ -217,8 +217,10 @@ lord-icon {
 }
 
 @media (max-width : 430px) {
-    html{
-        height: 100%;
+    @media (min-height : 679px) {
+        html{
+            height: 100%;
+        }
     }
     body{
         height: 98%;
@@ -308,6 +310,9 @@ lord-icon {
         justify-content: space-between;
         align-items: center;
         height: 100%;
+    }
+    #login-page{
+        display: none;
     }
 
     #black {
