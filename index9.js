@@ -1,12 +1,19 @@
 document.getElementById('search').addEventListener('click', function () {
-    const elements = document.querySelectorAll('#input-search');
+    const elements = document.querySelectorAll('.searchBox');
     elements.forEach(element => {
         if (element.style.display === 'none' || element.style.display === '') {
             element.style.display = 'block';
-            // element.style.position = 'absolute'
+            document.getElementById('input-search').classList.add('animation3');
+            document.getElementById('input-search').classList.remove('animation4');
+            this.innerHTML = '<lord-icon src="https://cdn.lordicon.com/nqtddedc.json" trigger="hover" style="width:30px;height:30px"></lord-icon>';
         }
         else {
-            element.style.display = 'none';
+            document.getElementById('input-search').classList.remove('animation3');
+            document.getElementById('input-search').classList.add('animation4');
+            setTimeout(()=>{
+                element.style.display = 'none';
+            },365);
+            this.innerHTML = '<lord-icon src="https://cdn.lordicon.com/fkdzyfle.json" trigger="hover" style="width:30px;height:30px">'
         }
     });
 })

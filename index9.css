@@ -1,7 +1,7 @@
 header {
     background: #ffc700;
     width: 100%;
-    height: 392px;
+    height: 460px;
     border-radius: 30px 30px 0 0;
 }
 
@@ -44,27 +44,65 @@ header button {
     margin: 0 14px;
     text-decoration: none;
     color: #000;
-    font-size: larger;
+    font-size: clamp(17px, 1.5vw, 1.8vw);
 }
-
 #left-header a:hover , .a-bas a:hover{
     filter: drop-shadow(2px 4px 6px black);
 }
 #input-search{
     border-color: black;
-    display: none;
-    position: relative;
-    height: 44px;
-    width: 240px;
-    padding: 0 14px;
-    background: none;
+    /* position: absolute; */
+    height: 41px;
+    width: 100%;
+    padding: 0 14px 0 47px;
+    background: #dbac06;
     filter: drop-shadow(2px 4px 6px black);
     border-radius: 22px;
     border: revert-layer;
+    justify-self: anchor-center;
+}
+.icono-cross{
+    color: #000;
+}
+#center-header{
+    font-size: clamp(10px, 1.2vw, 1.6vw);
+}
+.searchBox{
+    position: absolute;
+    justify-self: anchor-center;
+    width: 70%;
+    display: none;
+}
+.searchBox button{
+    position: absolute;
+    z-index: 1;
+    margin: 5px;
+}
+.animation3{
+    animation: move3 .5s ease-out ;
+}
+.animation4{
+    animation: move4 .5s ease-out;
+}
+@keyframes move3 {
+    from{
+        width: 0;
+    }
+    to{
+        width: 240px;
+    }
+}
+@keyframes move4 {
+    from{
+        width: 240px;
+    }
+    to{
+        width: 0;
+    }
 }
 #img-header img {
-    width: 300px;
-    height: 300px;
+    width: clamp(120px, 26vw, 300px);
+    height: clamp(120px, 26vw, 300px);
     border-radius: 34% 12% 34% 58%;
     margin: 10px;
 }
@@ -83,7 +121,7 @@ header button {
 }
 .slide-track {
     display: flex;
-    width: calc(300px * 20);
+    width: calc(clamp(120px, 26vw, 26vw) * 20);
     /* عرض هر تصویر * تعداد تصاویر */
     animation: scroll 20s linear infinite;
 }
@@ -97,12 +135,11 @@ header button {
         transform: translateX(calc(-300px * 10));
     }
 
-    /* حرکت کل تصاویر */
 }
 
 #off {
-    width: 85px;
-    height: 85px;
+    width: clamp(56px, 10.5vw, 12.8vw);
+    height: clamp(56px, 10.5vw, 12.8vw);
     background-color: #45380f;
     border-radius: 50%;
     padding: 2px;
@@ -114,8 +151,8 @@ header button {
 
 #off h4 {
     animation: text 5s linear infinite;
-    font-size: xx-large;
-    margin: 24px 0;
+    font-size: clamp(22px, 2.8vw, 4.8vw);
+    margin: calc(calc(clamp(56px, 10.5vw, 12.8vw) - clamp(22px, 2.8vw, 4.8vw)) / 2) 0;
 }
 
 @keyframes text {
@@ -163,8 +200,8 @@ p span {
 }
 
 aside img {
-    width: 350px;
-    height: 445px;
+    width: clamp(165px, 26vw, 320px);
+    height: clamp(206px, 32.5vw, 399px);
 }
 
 .img-aside {
@@ -213,6 +250,7 @@ aside , .a-bas {
 
 .text-img h3 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: clamp(15px, 1vw, 1.3vw);
 }
 
 footer {
@@ -239,7 +277,7 @@ footer {
 
 footer p {
     text-align: center;
-    font-size: larger;
+    font-size: clamp(15px, 1vw, 1.3vw);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 30px;
 }
@@ -260,7 +298,7 @@ footer p {
     display: none;
 }
 .basket img{
-    width: 390px;
+    width: 100%;
     mix-blend-mode: multiply;
 }
 .text-bas , .p-bas{
@@ -290,5 +328,52 @@ footer p {
     }
     to{
         transform: translateX(20px);
+    }
+}
+.widthMax{
+    display: inline-block;
+}
+.widthMin{
+    display: none;
+}
+@media (max-width : 460px) {
+    #left-header a {
+        display: none;
+    }
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+    
+        100% {
+            transform: translateX(calc(-120px * 10));
+        }
+    
+    }
+    header{
+        height: 195px;
+    }
+    #off{
+        top: 168px;
+    }
+    .widthMax{
+        display: none;
+    }
+    .widthMin{
+        display: inline-block;
+    }
+    .footer-icon{
+        width: 87%;
+        padding: 0 5px;
+        height: 141px;
+    }
+    .basket{
+        right: 0;
+        justify-self: anchor-center;
+        width: 75%;
+        height: 60%;
+    }
+    .p-bas , .a-bas{
+        font-size: (15px, 1.2vw, 1.9vw);
     }
 }
