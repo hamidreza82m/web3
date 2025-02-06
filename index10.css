@@ -102,6 +102,11 @@ header a:hover {
     color: #fff;
     font-size: 17px;
 }
+.search button:hover{
+    background: #e1c3f1;
+    color: #a439dd;
+    
+}
 
 .search {
     display: flex;
