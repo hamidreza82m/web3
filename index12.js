@@ -26,4 +26,5 @@ function result() {
 
 function clearInput() {
     document.getElementById('input').value = "";
+    document.getElementById('input-mini').value = "";
 }

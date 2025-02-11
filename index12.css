@@ -4,8 +4,8 @@ body {
 }
 
 button {
-    width: 90px;
-    height: 90px;
+    width: clamp(40px , 7.2vw , 90px);
+    height: clamp(40px , 7.2vw , 90px);
     font-size: x-large;
     margin: 9px;
     filter: drop-shadow(6px 7px 6px black);
@@ -21,7 +21,7 @@ button:hover {
 }
 
 input {
-    width: 82%;
+    width: clamp( 67% , 68% ,75%);
     background: #000;
     padding: 0 30px;
     border-radius: 18px;
@@ -40,7 +40,7 @@ input {
 
 #full {
     padding: 20px;
-    width: 450px;
+    width: clamp(234px , 36.4vw , 450px);
     background: #4b4b4b;
     /* box-shadow: 0px 0px 78px 37px #ffffff26; */
     filter: drop-shadow(5px 4px 17px #777);
@@ -51,4 +51,18 @@ input {
     background: black;
     border: double 8px #aaa;
     border-radius: 27px;
+}
+@media (max-width : 440px) {
+    #input{
+        font-size: xx-large;
+        height: 70px;
+    }
+    #input-mini{
+        font-size: x-large;
+    }
+    button{
+        border-radius: 10px;
+        font-size: medium;
+        margin: 7px;
+    }
 }
