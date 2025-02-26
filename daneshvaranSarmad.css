@@ -1,0 +1,871 @@
+@font-face {
+    font-family: iranSans;
+    src: url(./IRANSansWeb\(FaNum\)_Bold.ttf);
+}
+
+body {
+    margin: 0;
+    justify-items: right;
+    margin-top: 109px;
+}
+
+#none {
+    width: 227px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    filter: drop-shadow(0px 3px 2px #aeaeae);
+    border-radius: 0 0 45px 45px;
+    height: 109px;
+    width: 100%;
+    position: fixed;
+    z-index: 8;
+    top: 0;
+}
+
+
+header img {
+    width: 187px;
+    height: 96px;
+    margin: 0 60px 0 0;
+}
+
+.a-header a {
+    margin: auto 12px;
+    color: #176D73;
+    text-decoration: none;
+    font-size: larger;
+    font-family: 'iranSans';
+
+}
+
+.Rectangle-89 {
+    width: 81px;
+    height: 100px;
+    animation: move 1s ease-in-out infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(3px);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(3px);
+    }
+}
+
+.Rectangle-89 .yellow {
+    border-top-right-radius: 50px;
+    height: 93px;
+    margin: 0;
+    background: #FFEA00;
+}
+
+.Rectangle-89 .blue {
+    height: 7px;
+    background: #38AFB3;
+}
+
+.text-org h1 {
+    font-family: iranSans;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 46.96px;
+    letter-spacing: 0%;
+    text-align: right;
+    width: 503px;
+    height: 94px;
+    color: #176D73;
+    margin: 17px;
+}
+
+.org {
+    width: 60%;
+    position: relative;
+    display: flex;
+    justify-items: right;
+    flex-direction: row-reverse;
+    padding: 243px 73px 0 0;
+    align-items: center;
+}
+
+.img-aside img {
+    width: 397px;
+    height: 588px;
+    position: absolute;
+    top: 239px;
+    left: 104px;
+    border-top-right-radius: 150px;
+    border-bottom-right-radius: 150px;
+    z-index: 5;
+    object-fit: cover;
+}
+
+.border {
+    border: #38afb3 solid 1px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.border * {
+    margin: 7px;
+}
+
+.icons {
+    width: 51px;
+    height: 232px;
+    position: absolute;
+    top: 334px;
+    left: 31px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Rectangle-86 {
+    width: 100%;
+    height: 317px;
+    margin-top: 195px;
+}
+
+.top-86 {
+    height: 21px;
+    background: #38AFB3;
+}
+
+.bottom-86 {
+    height: 296px;
+    background: #176D73;
+    justify-items: right;
+}
+
+.Rectangle-90 {
+    position: relative;
+    top: 45px;
+    right: 145px;
+    display: flex;
+    width: 640px;
+    justify-content: space-between;
+}
+
+.Rectangle-90 a {
+    justify-items: anchor-center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.Rectangle-90 h3 {
+    font-family: 'iranSans';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 31.3px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #fff;
+    flex-direction: row-reverse;
+}
+
+.Rectangle-89-2 {
+    width: 81px;
+    height: 69px;
+    margin: 20px;
+    animation: move 1s ease-in-out infinite;
+}
+
+.Rectangle-89-2 .yellow {
+    border-top-right-radius: 50px;
+    height: 62px;
+    width: 81px;
+    margin: 0;
+    background: #FFEA00;
+}
+
+.Rectangle-81 {
+    padding: 203px 0 0;
+    background: linear-gradient(80.06deg, #38AFB3 -2.01%, rgba(96, 181, 184, 0.711926) 12.3%, rgba(137, 187, 189, 0.42001) 27%, rgba(165, 191, 192, 0.221818) 38.25%, rgba(182, 194, 194, 0.100346) 50%, rgba(196, 196, 196, 0) 45.57%);
+    justify-items: right;
+    width: 100%;
+}
+
+.padding {
+    margin: 0 73px;
+}
+
+.Rectangle-81>div {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-self: anchor-center;
+}
+
+.Rectangle-89-2 .blue {
+    height: 7px;
+    background: #38AFB3;
+}
+
+.Rectangle-81 h3 {
+    font-family: 'iranSans';
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 46.96px;
+    letter-spacing: 0%;
+
+}
+
+.Rectangle-81 p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    font-size: larger;
+    line-height: 28.17px;
+    text-align: right;
+    direction: rtl;
+}
+
+.Rectangle-89-2-text {
+    justify-items: right;
+}
+
+.circle {
+    width: 187px;
+    height: 187px;
+    background: #ffea00;
+    border-radius: 50%;
+    position: relative;
+    right: 93px;
+}
+
+.circle h4 {
+    font-family: 'iranSans';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 31.3px;
+    margin: 20px;
+    padding: 58px 0px;
+    text-align: center;
+}
+
+.rectangle {
+    background: #176D73;
+    color: #fff;
+    border-radius: 59px 0 0 59px;
+    padding: 20px 120px 20px 120px;
+}
+
+.boxs {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: relative;
+    left: 190px;
+    margin: 40px;
+    z-index: 5;
+}
+
+.img-key {
+    float: left;
+}
+
+.img-key img {
+    width: 813px;
+    height: 997px;
+    position: absolute;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    left: -73px;
+    object-fit: cover;
+}
+
+.Products img {
+    width: 187px;
+    height: 123px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+
+}
+
+.Products {
+    justify-self: anchor-center;
+}
+
+.Products h5 {
+    font-family: 'iranSans';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 37.57px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin: 6px;
+    color: #176D73;
+}
+
+.Products>div {
+    margin: 7px;
+    transition: all .75s ease-in-out;
+}
+
+.Products>div:hover {
+    transform: translateY(-6px) scale(1.1);
+    transition: all .75s ease-in-out;
+}
+
+.navar {
+    width: 804px;
+    height: 5px;
+    background: #999999;
+}
+
+#yellow-navar {
+    width: 187px;
+    height: 5px;
+    background-color: #FFEA00;
+    position: relative;
+    left: 76%;
+    transition: left 1s ease-in-out;
+}
+
+.grid>div {
+    width: 397px;
+    height: 180px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background: linear-gradient(270.18deg, #176D73 10.82%, #38AFB3 102.86%);
+    margin: 37px;
+    transition: all .75s ease-in-out;
+}
+
+.reverse {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.grid h6 {
+    color: #fff;
+    font-family: 'iranSans';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28.17px;
+    letter-spacing: 0%;
+    text-align: right;
+    margin: 24px;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 18px;
+    justify-content: center;
+    width: 100%;
+}
+
+.white-grid {
+    width: 397px;
+    height: 94px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-family: 'iranSans';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28.17px;
+    letter-spacing: 0%;
+    text-align: right;
+    background: #fff;
+    color: #176D73;
+}
+
+.grid p {
+    font-family: 'iranSans';
+    font-weight: 700;
+    font-size: smaller;
+    line-height: 28.17px;
+    letter-spacing: 0%;
+    text-align: right;
+    margin: 0 15px;
+}
+
+.seen {
+    display: block;
+    width: 397px;
+    height: 37px;
+    background-color: #FFEA00;
+    color: #176D73;
+    text-decoration: none;
+    font-family: 'iranSans';
+    font-weight: 500;
+    font-size: large;
+    line-height: 25.04px;
+    letter-spacing: 0%;
+    text-align: center;
+    padding: 9px 0 0;
+    opacity: 0;
+    transform: rotateX(90deg);
+    transition: all .75s ease-in-out;
+}
+
+.grid>div:hover>.seen {
+    opacity: 1;
+    transform: rotateX(0deg);
+    transition: all .75s ease-in-out;
+}
+
+.grid>div:hover {
+    height: 217px;
+    transform: translateY(-37px);
+    transition: .75s ease-in-out;
+    margin-bottom: 0;
+}
+
+.mini-circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #38AFB3;
+    margin: 5px;
+}
+
+.mini-circles {
+    display: flex;
+    justify-content: space-around;
+}
+
+#c0 {
+    background: #213f40;
+}
+
+.slides {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.slides img:hover {
+    filter: drop-shadow(0px 0px 3px black);
+}
+
+.moshtariyan {
+    justify-items: right;
+    width: 80%;
+    margin: 200px 154px;
+}
+
+.inputs {
+    height: 682px;
+    width: 100%;
+    border-radius: 0 0 50px 50px;
+    background: linear-gradient(270deg, #176D73 0.04%, #176D73 36.82%, rgba(23, 109, 115, 0) 90.99%), url(./img7.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.input1 {
+    width: 252px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.input2 {
+    width: 568px;
+    height: 121px;
+    border-radius: 10px;
+
+}
+
+form button {
+    width: 292px;
+    height: 60px;
+    border-radius: 10px;
+    background: #FFEA00;
+    color: #222222;
+    margin-right: 322px;
+    border: none;
+    margin-top: 10px;
+}
+
+form button:hover {
+    background: #554e009e;
+    border: groove;
+    color: #fff;
+}
+
+form,
+form button {
+    font-family: 'iranSans';
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 37.57px;
+    letter-spacing: 0%;
+    justify-items: right;
+}
+
+.labels {
+    color: #999999;
+    position: absolute;
+    top: 9px;
+    right: 0;
+    padding: 0 10px;
+    pointer-events: none;
+    transition: 0.25s all ease;
+}
+
+form input:focus+.labels,
+form input:not(:placeholder-shown)+.labels {
+    transform: translate(-12px, -28px);
+    font-size: 14px;
+    color: #000;
+    background: #fff;
+    border-radius: 50px;
+}
+
+form {
+    margin-right: 110px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.form-group {
+    position: relative;
+    margin: 12px 10px;
+}
+
+form input {
+    border: none;
+    border: none;
+    font-size: medium;
+    padding: 0px 20px;
+    text-align: right;
+    font-family: 'iranSans';
+}
+
+.inputs h3 {
+    font-family: 'iranSans';
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 46.96px;
+    letter-spacing: 0%;
+    color: #fff;
+    margin: 65px 144px 17px;
+}
+
+form input:focus {
+    border-color: #5dc94f;
+}
+
+form input::placeholder {
+    color: transparent;
+}
+
+.location {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+}
+
+iframe {
+    border: 0;
+    width: 923px;
+    height: 308px;
+    margin: 50px;
+}
+
+.background {
+    background: linear-gradient(80.06deg, #38AFB3 -2.08%, rgba(96, 181, 184, 0.711926) 16.39%, rgba(137, 187, 189, 0.42001) 35.95%, rgba(165, 191, 192, 0.221818) 51.11%, rgba(182, 194, 194, 0.100346) 66.71%, rgba(196, 196, 196, 0) 86.07%);
+    width: 100%;
+}
+
+.shadow {
+    background: radial-gradient(50% 50% at 50% 50%, rgba(23, 109, 115, 0.7) 0%, rgba(23, 109, 115, 0) 100%);
+    width: 93px;
+    height: 36px;
+    position: absolute;
+    right: 14px;
+    top: 99px;
+}
+
+.location .loc {
+    position: absolute;
+    right: 115px;
+    top: 115px;
+}
+
+.location img {
+    animation: move 1s ease-in-out infinite;
+}
+
+footer {
+    width: 1440px;
+    height: 341px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color: #176D73;
+    width: 100%;
+}
+
+footer>div {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    justify-self: anchor-center;
+    flex-direction: row-reverse;
+    border-bottom: groove #eee;
+}
+
+footer>div>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 65px;
+}
+
+footer h6,
+footer a {
+    text-align: center;
+    font-family: 'iranSans';
+    font-size: smaller;
+    color: #d1fad7;
+    text-decoration: none;
+}
+
+footer .margin {
+    margin-top: 30px;
+}
+
+.khadamat {
+    position: relative;
+    width: 100%;
+    text-align: right;
+}
+
+@media (max-width:440px) {
+    .header {
+        align-items: center;
+        justify-content: space-around;
+        height: 96px;
+    }
+
+    #none,
+    .a-header {
+        display: none;
+    }
+
+    header img {
+        width: 140px;
+        height: auto;
+        margin: auto;
+    }
+
+    .org {
+        width: 100%;
+        padding: 77px 0px;
+    }
+
+    .text-org h1 {
+        font-size: 13px;
+        width: auto;
+        height: auto;
+    }
+
+    .img-aside img {
+        width: 182px;
+        height: 286px;
+        top: 336px;
+    }
+
+    .bottom-86 {
+        height: 210px;
+    }
+
+    .Rectangle-90 {
+        right: auto;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .Rectangle-90 h3 {
+        font-size: 11px;
+    }
+
+    .Rectangle-81>div {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .padding {
+        margin: 0;
+    }
+
+    .Rectangle-81 h3 {
+        font-size: 20px;
+    }
+
+    .Products>div {
+        margin: 1px;
+    }
+
+    .Products img {
+        width: 89px;
+        height: 55px;
+    }
+
+    .Products h5 {
+        font-size: 10px;
+    }
+
+    .navar {
+        width: 364px;
+    }
+
+    #yellow-navar {
+        width: 91px;
+    }
+
+    .grid {
+        justify-content: none;
+    }
+
+    .grid>div {
+        width: 155px;
+        height: 208px;
+        margin: 29px 3px;
+    }
+
+    .grid h6 {
+        font-size: small;
+        margin: 8px;
+    }
+
+    .white-grid {
+        width: 155px;
+        height: 111px;
+    }
+
+    .grid p {
+        font-size: x-small;
+        margin: 0px 4px;
+    }
+
+    .seen {
+        width: 155px;
+        height: 23px;
+        font-size: x-small;
+        padding: 4px 0;
+    }
+
+    .moshtariyan {
+        margin: 184px 36px;
+    }
+
+    .Rectangle-81 p {
+        font-size: x-small;
+        margin: 27px;
+    }
+
+    .inputs h3 {
+        margin: 53px 113px 17px;
+    }
+
+    form {
+        margin-right: 34px;
+    }
+
+    form,
+    form button {
+        font-size: 11px;
+    }
+
+    .input1 {
+        width: 180px;
+        height: 43px;
+    }
+
+    form input {
+        font-size: smaller;
+    }
+
+    .labels {
+        top: 4px;
+    }
+
+    .flex {
+        flex-direction: column;
+    }
+
+    .input2 {
+        width: 180px;
+        height: 121px;
+    }
+
+    form button {
+        margin: 10px;
+        width: 219px;
+        height: 38px;
+    }
+
+    iframe {
+        width: 315px;
+        height: 200px;
+        margin: auto;
+    }
+
+    footer {
+        height: 415px;
+    }
+
+    #khadamat {
+        transform: translateY(-65px);
+        margin: 33px;
+    }
+
+    .img-key {
+        width: 100%;
+    }
+
+    .img-key img {
+        width: 324px;
+    }
+
+    .boxs {
+        left: -7px;
+        margin: 74px auto;
+    }
+
+    .circle {
+        width: auto;
+        height: auto;
+        background: none;
+        position: absolute;
+        top: -70px;
+        right: auto;
+    }
+
+    .circle h4 {
+        font-size: 11px;
+        padding: 14px;
+        text-align: center;
+        background: #ffea00;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+
+    .rectangle {
+        padding: 20px;
+    }
+
+}
