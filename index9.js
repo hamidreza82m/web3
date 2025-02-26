@@ -33,7 +33,7 @@ document.getElementById('icon-bas').addEventListener('click', function () {
             element.style.display = 'block';
             document.getElementById('basket').classList.add('animation2');
             document.getElementById('basket').classList.remove('animation');
-            // element.style.position = 'absolute'
+            document
         }
         else {
             document.getElementById('basket').classList.remove('animation2');

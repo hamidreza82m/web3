@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>daneshvaran Sarmad</title>
     <link rel="stylesheet" href="./daneshvaranSarmad.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/dist/boxicons.js' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -19,7 +21,20 @@
             <a href="#connected">ارتباط با ما</a>
         </div>
         <img src="./logo].png" alt="">
+        <button id="show" onclick="show()"><i class='bx bx-menu' id="menu" style='color:#176d73'></i></button>
+        <div id="hover" onclick="header()" class="radius2">
+            <lord-icon src="https://cdn.lordicon.com/rmkahxvq.json" trigger="hover" state="hover-arrow-down-2"
+                colors="primary:#38afb3" style="width:50px;height:50px">
+            </lord-icon>
+        </div>
     </header>
+    <div class="menu" id="menu2">
+        <a href="#moarfi-sherkat">معرفی شرکت</a>
+        <a href="#khadamat">خدمات</a>
+        <a href="#narmAfzar">محصولات نرم افزاری</a>
+        <a href="#moshtariyan">مشتریان ما</a>
+        <a href="#connected">ارتباط با ما</a>
+    </div>
     <div class="org">
         <div class="Rectangle-89">
             <div class="yellow"></div>
@@ -71,12 +86,12 @@
             <div class="Rectangle-89-2-text">
                 <div class="reverse">
                     <div class="Rectangle-89-2">
-                    <div class="yellow"></div>
-                    <div class="blue"></div>
+                        <div class="yellow"></div>
+                        <div class="blue"></div>
+                    </div>
+                    <h3 id="moarfi-sherkat">معرفی شرکت</h3>
                 </div>
-                <h3 id="moarfi-sherkat">معرفی شرکت</h3>
-                </div>
-                
+
                 <p>اینجا پایگاه اطلاع رسانی و تبلیغی پیرامون فعالیت ها و محصولات شرکت دانشوران سرمد می باشد. <br> این
                     شرکت با هدف
                     ارائه خدمات علمی و فنی هدف دار و ثمربخش
@@ -97,20 +112,23 @@
                         </div>
                         <div class="rectangle">
                             <P>
-                                تولید نرم افزارهای یکپارچه مالی، اداری و منابع انسانی هوشا<br>
+                                تولید نرم افزارهای یکپارچه مالی، اداری و منابع انسانی هوشا نسخه های دسکتاب<br>
                                 تولید نرم افزارهای تحت وب در قالب مجتمع هوشا با استفاده از تکنولوژی جاوایی و متن باز
                                 <br>
                                 تولید و ارایه سرویس های ابری برای فعالیت های مالی و اداری در دامنه Hushaerp.com <br>
-                                طراحی و تولید سایت های شرکتی، تجاری و فروشگاهی برای مشتریان<br>
-                                تولید و راه اندازی پورتال ذیحسابی به عنوان پایگاه اخبار و مقررات مالی و محاسباتی در<br>
-                                دامنه ی Zihesabi.com <br>
+                                تولید و راه اندازی پورتال ذیحسابی به عنوان پایگاه اخبار و مقررات مالی و محاسباتی در آدرس
+                                zihesabi.ir<br>
+                                طراحی و تولید نرم افزار جامع مدیریت مدارس با برند آقای درس aghayeDars <br>
+                                طراحی و راه اندازی فروشگاه محصولات سنتی و محلی تحت برند آقای خان <br>
                                 مشارکت در طراحی UI/UX پروژه های طراحی سایت و اپلیکیشن های موبایل<br>
+                                طراحی و تولید سایت های شرکتی، تجاری و فروشگاهی برای مشتریان<br>
+
                             </P>
                         </div>
                     </div>
                     <div class="boxs" id="m2">
                         <div class="circle">
-                            <h4>شبکه سخت افزار</h4>
+                            <h4> سخت افزار شبکه و امنیت</h4>
                         </div>
                         <div class="rectangle">
                             <p>ارایه و پشتیبانی سخت افزاری<br>
@@ -118,6 +136,7 @@
                                 2. طراحی و راه اندازی شبکه<br>
                                 3. پشتیبانی سخت افزاری و نگهداری شبکه<br>
                                 4.ریکاوری و تعمیرات سرور<br>
+                                5.مشاوره و نظارت بر انیت شبکه و محصولات افتا
                             </p>
                         </div>
                     </div>
@@ -169,7 +188,7 @@
             <div>
                 <h6>حسابداری تعهدی بخش عمومی نسخه ذیحساب</h6>
                 <div class="white-grid">
-                    <p>حسابداری تعهدی بخش عمومی جهت ذیحسابی ها<br>
+                    <p>حسابداری تعهدی بخش عمومی جهت ذیحسابی ها
                         و امور مالی بخش دولتی</p>
                 </div>
                 <a href="#" class="seen">مشاهده محصول</a>
@@ -177,7 +196,7 @@
             <div>
                 <h6>حقوق و دستمزد شاغلین بخش دولتی</h6>
                 <div class="white-grid">
-                    <p>محاسبه حقوق و دستمزذ شاغلین<br>
+                    <p>محاسبه حقوق و دستمزذ شاغلین
                         بخش دولتی و تهیه خروجی ها و گزارشات لازم</p>
                 </div>
                 <a href="#" class="seen">مشاهده محصول</a>
@@ -185,7 +204,7 @@
             <div>
                 <h6>انبار موجودی و کالا</h6>
                 <div class="white-grid">
-                    <p>ثبت حواله و قبض انباری موجودی و کالا بخش<br>
+                    <p>ثبت حواله و قبض انباری موجودی و کالا بخش
                         غیردولتی و تهیه گزارشات مرسوم</p>
                 </div>
                 <a href="#" class="seen">مشاهده محصول</a>
@@ -193,7 +212,7 @@
             <div>
                 <h6>اموال دولتی</h6>
                 <div class="white-grid">
-                    <p>ثبت اموال دولتی و تهیه گزارشات مرسوم، <br>
+                    <p>ثبت اموال دولتی و تهیه گزارشات مرسوم،
                         اموال در بخش دولتی و ذیحسابی ها</p>
                 </div>
                 <a href="#" class="seen">مشاهده محصول</a>
@@ -201,8 +220,8 @@
             <div>
                 <h6>حقوق و دستمزد عمومی</h6>
                 <div class="white-grid">
-                    <p>محاسبات حقوق دستمزد و تهیه گزارشات و <br>
-                        خروج های بیمه، مالیات، فیش حقوقی و غیره<br>
+                    <p>محاسبات حقوق دستمزد و تهیه گزارشات و
+                        خروج های بیمه، مالیات، فیش حقوقی و غیره
                         برای بخش غیردولتی</p>
                 </div>
                 <a href="#" class="seen">مشاهده محصول</a>
@@ -210,7 +229,7 @@
             <div>
                 <h6>حقوق بازنشستگان و موظفین دولتی</h6>
                 <div class="white-grid">
-                    <p>محاسبه حقوق بازنشستگان و موظفین دولتی و<br>
+                    <p>محاسبه حقوق بازنشستگان و موظفین دولتی و
                         نیز تهیه گزارشات و خروجی های ساطمان بازنشستگی</p>
                 </div>
                 <a href="#" class="seen">مشاهده محصول</a>
@@ -289,10 +308,12 @@
                 <img src="./img8.png" alt="">
                 <div class="shadow"></div>
             </div>
-            <div><iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1982.986516525391!2d51.374237706236485!3d35.70082189106932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00e7f1783113%3A0xfbd9b0b99035872a!2sMiddle%20East%20Animal%20Hospital!5e0!3m2!1sen!2s!4v1740478606805!5m2!1sen!2s"
+            <div class="loc2">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d556.4003702225272!2d51.35341468930564!3d35.70890123648604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1740602710236!5m2!1sen!2s"
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
 
         <footer id="footer">
@@ -306,8 +327,8 @@
                     </div>
                 </div>
                 <div>
-                    <div><lord-icon src="https://cdn.lordicon.com/dhmavvpz.json" trigger="loop" delay="2000"
-                            state="loop-roll" colors="primary:#ffffff,secondary:#d1fad7" style="width:48px;height:48px">
+                    <div><lord-icon class="footer-icon" src="https://cdn.lordicon.com/dhmavvpz.json" trigger="loop"
+                            delay="2000" state="loop-roll" colors="primary:#ffffff,secondary:#d1fad7">
                         </lord-icon></div>
                     <div>
                         <h6 class="margin">تهران<br>
@@ -317,8 +338,8 @@
                     </div>
                 </div>
                 <div>
-                    <div><lord-icon src="https://cdn.lordicon.com/srsgifqc.json" trigger="loop" delay="2000"
-                            colors="primary:#d1fad7" style="width:48px;height:48px">
+                    <div><lord-icon class="footer-icon" src="https://cdn.lordicon.com/srsgifqc.json" trigger="loop"
+                            delay="2000" colors="primary:#d1fad7">
                         </lord-icon></div>
                     <div class="margin"><a href="tel:+982167263000">02167263000 </a> | <a href="tel:+982166514009">
                             02166514009</a></div>
@@ -332,6 +353,7 @@
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <script src="./daneshvaranSarmad.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
 </body>
 
 </html>

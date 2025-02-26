@@ -25,8 +25,92 @@ body {
     position: fixed;
     z-index: 8;
     top: 0;
+    transform: translateY(0);
+    transition: all .5s ease-in-out;
+}
+#hover{
+    display: none;
+    position: absolute;
+    bottom: -143px;
+    position-area: center;
+    background: #fff;
+}
+.header:hover{
+    transform: translateY(0);
+    transition: all .5s ease-in-out;
+}
+header button {
+    background: none;
+    border: none;
+    position: absolute;
+    left: 0;
+    margin: 16px;
+}
+.radius1{
+    border-radius: 50% 50% 0 0;
+}
+.radius2{
+    border-radius: 0 0 50% 50%;
+}
+header button i {
+    color: #378b9a;
+    font-size: 36px;
 }
 
+#show {
+    display: none;
+}
+
+.menu {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background: #176d73;
+    z-index: 9;
+    position: fixed;
+    right: 40px;
+    filter: drop-shadow(2px 5px 14px black);
+    display: none;
+}
+
+.animation5 {
+    animation: move5 .3s ease-in-out forwards;
+}
+
+.animation6 {
+    animation: move6 .3s ease-in-out forwards;
+}
+
+@keyframes move5 {
+    0% {
+        transform: translateX(-500px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes move6 {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-500px);
+    }
+}
+
+.menu a {
+    text-decoration: none;
+    padding: 29px;
+    font-size: 17px;
+    color: #fff;
+    font-family: 'iranSans';
+    width: 80%;
+    text-align: right;
+}
 
 header img {
     width: 187px;
@@ -41,6 +125,11 @@ header img {
     font-size: larger;
     font-family: 'iranSans';
 
+}
+
+.a-header a:hover {
+    color: #21afaf;
+    filter: drop-shadow(2px 2px 3px #aaa);
 }
 
 .Rectangle-89 {
@@ -108,6 +197,7 @@ header img {
     border-bottom-right-radius: 150px;
     z-index: 5;
     object-fit: cover;
+    animation: move 1s ease-in-out infinite;
 }
 
 .border {
@@ -162,6 +252,10 @@ header img {
     justify-items: anchor-center;
 }
 
+.Rectangle-90 a:hover {
+    filter: drop-shadow(1px 3px 3px black);
+}
+
 a {
     text-decoration: none;
 }
@@ -200,7 +294,7 @@ a {
 }
 
 .padding {
-    margin: 0 73px;
+    margin: 0 85px 0 0;
 }
 
 .Rectangle-81>div {
@@ -241,8 +335,8 @@ a {
     height: 187px;
     background: #ffea00;
     border-radius: 50%;
-    position: relative;
-    right: 93px;
+    position: absolute;
+    right: -110px;
 }
 
 .circle h4 {
@@ -267,8 +361,8 @@ a {
     flex-direction: row-reverse;
     align-items: center;
     position: relative;
-    left: 190px;
     margin: 40px;
+    margin-right: 110px;
     z-index: 5;
 }
 
@@ -277,13 +371,13 @@ a {
 }
 
 .img-key img {
-    width: 813px;
+    width: 90%;
     height: 997px;
     position: absolute;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
-    left: -73px;
     object-fit: cover;
+    left: 0;
 }
 
 .Products img {
@@ -326,7 +420,7 @@ a {
 }
 
 #yellow-navar {
-    width: 187px;
+    width: 201px;
     height: 5px;
     background-color: #FFEA00;
     position: relative;
@@ -633,6 +727,11 @@ footer>div>div {
     margin-top: 65px;
 }
 
+.icon-footer {
+    width: 30px;
+    height: 30px;
+}
+
 footer h6,
 footer a {
     text-align: center;
@@ -640,6 +739,11 @@ footer a {
     font-size: smaller;
     color: #d1fad7;
     text-decoration: none;
+}
+
+footer a:hover {
+    color: #75d4ff;
+    filter: drop-shadow(1px 3px 3px black);
 }
 
 footer .margin {
@@ -652,7 +756,7 @@ footer .margin {
     text-align: right;
 }
 
-@media (max-width:440px) {
+@media (max-width:1024px) {
     .header {
         align-items: center;
         justify-content: space-around;
@@ -741,13 +845,14 @@ footer .margin {
 
     .grid>div {
         width: 155px;
-        height: 208px;
+        height: 188px;
         margin: 29px 3px;
     }
 
     .grid h6 {
         font-size: small;
         margin: 8px;
+        height: 56.5px;
     }
 
     .white-grid {
@@ -772,7 +877,7 @@ footer .margin {
     }
 
     .Rectangle-81 p {
-        font-size: x-small;
+        font-size: 15px;
         margin: 27px;
     }
 
@@ -818,13 +923,13 @@ footer .margin {
     }
 
     iframe {
-        width: 315px;
-        height: 200px;
+        width: 80%;
         margin: auto;
     }
 
-    footer {
-        height: 415px;
+    .loc2 {
+        width: 100%;
+        text-align: center;
     }
 
     #khadamat {
@@ -837,12 +942,13 @@ footer .margin {
     }
 
     .img-key img {
-        width: 324px;
+        width: 70%;
     }
 
     .boxs {
         left: -7px;
         margin: 74px auto;
+        padding: 9px;
     }
 
     .circle {
@@ -850,7 +956,7 @@ footer .margin {
         height: auto;
         background: none;
         position: absolute;
-        top: -70px;
+        top: -53px;
         right: auto;
     }
 
@@ -860,12 +966,151 @@ footer .margin {
         text-align: center;
         background: #ffea00;
         border-radius: 50%;
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
     }
 
     .rectangle {
         padding: 20px;
     }
 
+    .location .loc {
+        right: 63px;
+        top: 203px;
+    }
+
+    .loc img {
+        width: 63px;
+    }
+
+    .shadow {
+        width: 63px;
+        height: 26px;
+        right: 0;
+        top: 56px;
+    }
+
+    footer>div {
+        flex-direction: column;
+    }
+
+    footer>div>div {
+        margin-top: auto;
+    }
+
+    footer img {
+        width: 30px;
+    }
+
+    footer .margin {
+        margin: 0 0 28px;
+    }
+
+    .icon-footer {
+        width: 30px;
+        height: 30px;
+    }
+
+    .location {
+        margin: 100px 0;
+    }
+
+    .white-grid p {
+        font-size: 10px;
+        margin: 5px;
+    }
+
+    .grid>div:hover {
+        margin: 14.5px 3px;
+        transform: translateY(-15px);
+    }
+
+    #show {
+        display: block;
+    }
+}
+
+@media (min-width:767px) and (max-width:1024px) {
+    .img-aside img {
+        width: 247px;
+        height: 330px;
+        top: 297px;
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 100px;
+    }
+
+    .text-org h1 {
+        font-size: 19px;
+    }
+
+    .Rectangle-90 h3 {
+        font-size: 16px;
+    }
+
+    .Rectangle-81 p {
+        font-size: 17px;
+    }
+
+    .Products>div {
+        margin: 7px;
+    }
+
+    .Products img {
+        width: 163px;
+        height: 112px;
+    }
+
+    .Products h5 {
+        font-size: 17px;
+    }
+
+    #yellow-navar {
+        width: 173px;
+    }
+
+    .navar {
+        width: 692px;
+    }
+
+    .seen {
+        width: 218px;
+    }
+
+    .grid>div:hover {
+        margin: 14.5px 9px;
+    }
+
+    .grid>div {
+        width: 218px;
+        margin: 29px 9px;
+    }
+
+    .white-grid {
+        width: 218px;
+    }
+
+    .white-grid p {
+        font-size: 13px;
+    }
+
+    .grid h6 {
+        font-size: 14px;
+    }
+}
+
+@media (min-width:1025px) and (max-width:1260px) {
+    .text-org h1 {
+        font-size: 27px;
+    }
+
+    .img-aside img {
+        width: 303px;
+        height: 441px;
+    }
+
+    #none,
+    header img {
+        width: 165px;
+        height: auto;
+    }
 }
