@@ -130,28 +130,34 @@ var target = document.querySelector('.header');
 window.addEventListener('scroll', function () {
     if (window.scrollY > 120) {
         target.style.transform = 'translateY(-98px)';
+        document.getElementById('hover').style.transform = 'rotateZ(0deg) translateX(-50%)';
+        document.getElementById('hover').classList.add('radius2');
+        document.getElementById('hover').classList.remove('radius1');
         document.getElementById('hover').style.display = 'block';
         document.getElementById('menu2').style.display = 'none';
         document.getElementById('show').innerHTML = `<i class='bx bx-menu' id="menu" style='color:#176d73'  ></i>`;
     }
     else {
         target.style.transform = 'translateY(0)';
+        document.getElementById('hover').classList.add('radius1');
+        document.getElementById('hover').classList.remove('radius2');
+        document.getElementById('hover').style.transform = 'rotateZ(180deg) translateX(50%)';
         document.getElementById('hover').style.display = 'none';
     }
 });
 function header() {
     if (target.style.transform == 'translateY(-98px)') {
         target.style.transform = 'translateY(0)';
-        document.getElementById('hover').style.transform = 'rotateZ(180deg)';
-        document.getElementById('hover').classList.add('radius1')
-        document.getElementById('hover').classList.remove('radius2')
+        document.getElementById('hover').style.transform = 'rotateZ(180deg) translateX(50%)';
+        document.getElementById('hover').classList.add('radius1');
+        document.getElementById('hover').classList.remove('radius2');
 
     }
     else {
         target.style.transform = 'translateY(-98px)';
-        document.getElementById('hover').style.transform = 'rotateZ(0deg)';
-        document.getElementById('hover').classList.add('radius2')
-        document.getElementById('hover').classList.remove('radius1')
+        document.getElementById('hover').style.transform = 'rotateZ(0deg) translateX(-50%)';
+        document.getElementById('hover').classList.add('radius2');
+        document.getElementById('hover').classList.remove('radius1');
 
     }
 }

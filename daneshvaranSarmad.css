@@ -1,11 +1,13 @@
 @font-face {
     font-family: iranSans;
-    src: url(./IRANSansWeb\(FaNum\)_Bold.ttf);
+    src: url(./IRANSansWeb\(FaNum\)_Bold.ttf) format(ttf) ,
+         url(./IRANSansWeb\(FaNum\)_Bold.eot) format(eoy) ,
+         url(./IRANSansWeb\(FaNum\)_Bold.woff) format(woff);
 }
 
 body {
     margin: 0;
-    justify-items: right;
+    text-align: -webkit-right;
     margin-top: 109px;
 }
 
@@ -28,17 +30,20 @@ body {
     transform: translateY(0);
     transition: all .5s ease-in-out;
 }
-#hover{
+
+#hover {
     display: none;
     position: absolute;
-    bottom: -143px;
-    position-area: center;
+    bottom: -40px;
     background: #fff;
+    left: 50%;
 }
-.header:hover{
+
+.header:hover {
     transform: translateY(0);
     transition: all .5s ease-in-out;
 }
+
 header button {
     background: none;
     border: none;
@@ -46,12 +51,15 @@ header button {
     left: 0;
     margin: 16px;
 }
-.radius1{
+
+.radius1 {
     border-radius: 50% 50% 0 0;
 }
-.radius2{
+
+.radius2 {
     border-radius: 0 0 50% 50%;
 }
+
 header button i {
     color: #378b9a;
     font-size: 36px;
@@ -166,7 +174,7 @@ header img {
 
 .text-org h1 {
     font-family: iranSans;
-    font-weight: 700;
+    font-weight: normal;
     font-size: 30px;
     line-height: 46.96px;
     letter-spacing: 0%;
@@ -236,7 +244,7 @@ header img {
 .bottom-86 {
     height: 296px;
     background: #176D73;
-    justify-items: right;
+    text-align: -webkit-right;
 }
 
 .Rectangle-90 {
@@ -249,7 +257,7 @@ header img {
 }
 
 .Rectangle-90 a {
-    justify-items: anchor-center;
+    text-align: center;
 }
 
 .Rectangle-90 a:hover {
@@ -289,7 +297,6 @@ a {
 .Rectangle-81 {
     padding: 203px 0 0;
     background: linear-gradient(80.06deg, #38AFB3 -2.01%, rgba(96, 181, 184, 0.711926) 12.3%, rgba(137, 187, 189, 0.42001) 27%, rgba(165, 191, 192, 0.221818) 38.25%, rgba(182, 194, 194, 0.100346) 50%, rgba(196, 196, 196, 0) 45.57%);
-    justify-items: right;
     width: 100%;
 }
 
@@ -300,7 +307,7 @@ a {
 .Rectangle-81>div {
     display: flex;
     flex-direction: row-reverse;
-    justify-self: anchor-center;
+    justify-content: center;
 }
 
 .Rectangle-89-2 .blue {
@@ -310,7 +317,7 @@ a {
 
 .Rectangle-81 h3 {
     font-family: 'iranSans';
-    font-weight: 700;
+    font-weight: normal;
     font-size: 30px;
     line-height: 46.96px;
     letter-spacing: 0%;
@@ -341,7 +348,7 @@ a {
 
 .circle h4 {
     font-family: 'iranSans';
-    font-weight: 700;
+    font-weight: normal;
     font-size: 20px;
     line-height: 31.3px;
     margin: 20px;
@@ -394,7 +401,7 @@ a {
 
 .Products h5 {
     font-family: 'iranSans';
-    font-weight: 700;
+    font-weight: normal;
     font-size: 24px;
     line-height: 37.57px;
     letter-spacing: 0%;
@@ -417,13 +424,14 @@ a {
     width: 804px;
     height: 5px;
     background: #999999;
+    position: relative;
 }
 
 #yellow-navar {
     width: 201px;
     height: 5px;
     background-color: #FFEA00;
-    position: relative;
+    position: absolute;
     left: 76%;
     transition: left 1s ease-in-out;
 }
@@ -447,7 +455,7 @@ a {
 .grid h6 {
     color: #fff;
     font-family: 'iranSans';
-    font-weight: 700;
+    font-weight: normal;
     font-size: 18px;
     line-height: 28.17px;
     letter-spacing: 0%;
@@ -469,7 +477,7 @@ a {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     font-family: 'iranSans';
-    font-weight: 700;
+    font-weight: normal;
     font-size: 18px;
     line-height: 28.17px;
     letter-spacing: 0%;
@@ -480,7 +488,7 @@ a {
 
 .grid p {
     font-family: 'iranSans';
-    font-weight: 700;
+    font-weight: normal;
     font-size: smaller;
     line-height: 28.17px;
     letter-spacing: 0%;
@@ -648,7 +656,7 @@ form input {
 
 .inputs h3 {
     font-family: 'iranSans';
-    font-weight: 700;
+    font-weight: normal;
     font-size: 30px;
     line-height: 46.96px;
     letter-spacing: 0%;
@@ -709,13 +717,13 @@ footer {
     border-top-right-radius: 50px;
     background-color: #176D73;
     width: 100%;
+    text-align: -webkit-center;
 }
 
 footer>div {
     display: flex;
     justify-content: space-evenly;
     width: 70%;
-    justify-self: anchor-center;
     flex-direction: row-reverse;
     border-bottom: groove #eee;
 }
