@@ -37,6 +37,7 @@ body {
     bottom: -40px;
     background: #fff;
     left: 50%;
+    height: 50px;
 }
 
 .header:hover {
@@ -935,7 +936,7 @@ footer .margin {
         margin: 184px 36px;
     }
 
-    .Rectangle-81 p {
+    .Rectangle-81 p , .rectangle li{
         font-size: 15px;
         margin: 27px 7px;
     }
