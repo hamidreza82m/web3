@@ -1,8 +1,8 @@
 @font-face {
     font-family: iranSans;
-    src: url(./IRANSansWeb\(FaNum\)_Bold.ttf) format(ttf) ,
-         url(./IRANSansWeb\(FaNum\)_Bold.eot) format(eoy) ,
-         url(./IRANSansWeb\(FaNum\)_Bold.woff) format(woff);
+    src: url(./IRANSansWeb\(FaNum\)_Bold.ttf) format(ttf),
+        url(./IRANSansWeb\(FaNum\)_Bold.eot) format(eoy),
+        url(./IRANSansWeb\(FaNum\)_Bold.woff) format(woff);
 }
 
 body {
@@ -232,7 +232,6 @@ header img {
 
 .Rectangle-86 {
     width: 100%;
-    height: 317px;
     margin-top: 195px;
 }
 
@@ -295,7 +294,7 @@ a {
 }
 
 .Rectangle-81 {
-    padding: 203px 0 0;
+    padding: 70px 0 0;
     background: linear-gradient(80.06deg, #38AFB3 -2.01%, rgba(96, 181, 184, 0.711926) 12.3%, rgba(137, 187, 189, 0.42001) 27%, rgba(165, 191, 192, 0.221818) 38.25%, rgba(182, 194, 194, 0.100346) 50%, rgba(196, 196, 196, 0) 45.57%);
     width: 100%;
 }
@@ -321,7 +320,6 @@ a {
     font-size: 30px;
     line-height: 46.96px;
     letter-spacing: 0%;
-
 }
 
 .Rectangle-81 p {
@@ -452,6 +450,10 @@ a {
     align-items: center;
 }
 
+#p-moarfi {
+    margin-bottom: 175px;
+}
+
 .grid h6 {
     color: #fff;
     font-family: 'iranSans';
@@ -462,13 +464,18 @@ a {
     text-align: right;
     margin: 24px;
 }
-
+#maliSlides{
+    display: none;
+}
 .grid {
     display: flex;
     flex-wrap: wrap;
     margin: 18px;
     justify-content: center;
     width: 100%;
+}
+#all,#mali,#servisAbri,#webSites{
+    display: none;
 }
 
 .white-grid {
@@ -567,6 +574,7 @@ a {
     border-radius: 0 0 50px 50px;
     background: linear-gradient(270deg, #176D73 0.04%, #176D73 36.82%, rgba(23, 109, 115, 0) 90.99%), url(./img7.png);
     background-size: cover;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     text-align: right;
@@ -628,7 +636,7 @@ form input:not(:placeholder-shown)+.labels {
     font-size: 14px;
     color: #000;
     background: #fff;
-    border-radius: 50px;
+    border-radius: 50px 50px 0 0;
 }
 
 form {
@@ -720,7 +728,7 @@ footer {
     text-align: -webkit-center;
 }
 
-footer>div {
+.div-footer {
     display: flex;
     justify-content: space-evenly;
     width: 70%;
@@ -728,7 +736,7 @@ footer>div {
     border-bottom: groove #eee;
 }
 
-footer>div>div {
+.div-footer>div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -762,8 +770,35 @@ footer .margin {
     position: relative;
     width: 100%;
     text-align: right;
+    background: url(./img2.png);
+    background-size: cover;
+    background-attachment: fixed;
+    border-radius: 90px;
+    margin-bottom: 70px;
+    padding-bottom: 16px;
 }
 
+#khadamat {
+    transform: translateY(-63px);
+}
+.end p{
+    font-family: 'iranSans';
+    font-size: 9px;
+    text-align: right;
+    width: 70%;
+    color: #bfe0cc;
+}
+.end span{
+    font-size: 13px;
+    color: #d1fad7;
+}
+.end a{
+    color: #bfe0cc;
+}
+.end a:hover{
+    color: #75d4ff;
+    filter: drop-shadow(-1px 2px 1px black);
+}
 @media (max-width:1024px) {
     .header {
         align-items: center;
@@ -797,6 +832,8 @@ footer .margin {
         width: 182px;
         height: 286px;
         top: 336px;
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 100px;
     }
 
     .bottom-86 {
@@ -815,7 +852,7 @@ footer .margin {
 
     .Rectangle-81>div {
         width: 100%;
-        justify-content: center;
+        justify-content: space-evenly;
     }
 
     .padding {
@@ -840,15 +877,15 @@ footer .margin {
     }
 
     .navar {
-        width: 364px;
+        width: 92%;
     }
 
     #yellow-navar {
-        width: 91px;
+        width: 25%;
     }
 
     .grid {
-        justify-content: none;
+        margin: 0;
     }
 
     .grid>div {
@@ -879,14 +916,16 @@ footer .margin {
         font-size: x-small;
         padding: 4px 0;
     }
-
+    .khadamat{
+        border-radius: 35px;
+    }
     .moshtariyan {
         margin: 184px 36px;
     }
 
     .Rectangle-81 p {
         font-size: 15px;
-        margin: 27px;
+        margin: 27px 7px;
     }
 
     .inputs h3 {
@@ -894,7 +933,14 @@ footer .margin {
     }
 
     form {
-        margin-right: 34px;
+        margin: 0;
+    }
+
+    .inputs {
+        align-items: center;
+        background: linear-gradient(270deg, #176d73ed 0.04%, #176d7399 36.82%, rgba(23, 109, 115, 0) 90.99%), url(./img9.png);
+        background-size: cover;
+        background-attachment: fixed;
     }
 
     form,
@@ -922,6 +968,10 @@ footer .margin {
     .input2 {
         width: 180px;
         height: 121px;
+    }
+
+    .Rectangle-81 {
+        background: linear-gradient(90deg, #38afb3bf, rgba(196, 196, 196, 0) 110%);
     }
 
     form button {
@@ -954,9 +1004,8 @@ footer .margin {
     }
 
     .boxs {
-        left: -7px;
         margin: 74px auto;
-        padding: 9px;
+        padding: 14px;
     }
 
     .circle {
@@ -983,8 +1032,9 @@ footer .margin {
     }
 
     .location .loc {
-        right: 63px;
-        top: 203px;
+        right: 50%;
+        top: -86px;
+        transform: translateX(50%);
     }
 
     .loc img {
@@ -998,11 +1048,11 @@ footer .margin {
         top: 56px;
     }
 
-    footer>div {
+    .div-footer {
         flex-direction: column;
     }
 
-    footer>div>div {
+    .div-footer>div {
         margin-top: auto;
     }
 
@@ -1035,6 +1085,32 @@ footer .margin {
 
     #show {
         display: block;
+    }
+
+    .Rectangle-89 {
+        width: 62px;
+        height: 78px;
+        margin-right: 15px;
+    }
+
+    .Rectangle-89 .yellow {
+        border-top-right-radius: 35px;
+        height: 72px;
+    }
+
+    .Rectangle-89 .blue {
+        height: 5px;
+    }
+
+    .Rectangle-89-2 {
+        width: 50px;
+        height: 45px;
+    }
+
+    .Rectangle-89-2 .yellow {
+        border-top-right-radius: 28px;
+        height: 38px;
+        width: auto;
     }
 }
 

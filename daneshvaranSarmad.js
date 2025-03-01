@@ -1,14 +1,40 @@
+const all = document.getElementById('all');
+const mali = document.getElementById('mali');
+const servisAbri = document.getElementById('servisAbri');
+const webSites = document.getElementById('webSites');
+const maliSlides = document.getElementById('maliSlides');
+console.log(mali);
 function animation1() {
     document.getElementById('yellow-navar').style.left = '75%';
+    maliSlides.style.display='none';
+    all.style.display='flex';
+    mali.style.display='none';
+    servisAbri.style.display='none';
+    webSites.style.display='none';
 }
 function animation2() {
     document.getElementById('yellow-navar').style.left = '50%';
+    maliSlides.style.display='flex';
+    all.style.display='none';
+    mali.style.display='flex';
+    servisAbri.style.display='none';
+    webSites.style.display='none';
 }
 function animation3() {
     document.getElementById('yellow-navar').style.left = '25%';
+    maliSlides.style.display='none';
+    all.style.display='none';
+    mali.style.display='none';
+    servisAbri.style.display='flex';
+    webSites.style.display='none';
 }
 function animation4() {
     document.getElementById('yellow-navar').style.left = '0%';
+    maliSlides.style.display='none';
+    all.style.display='none';
+    mali.style.display='none';
+    servisAbri.style.display='none';
+    webSites.style.display='flex';
 }
 // // تابع برای چاپ عرض و ارتفاع صفحه
 // function printWindowSize() {
@@ -26,7 +52,7 @@ function animation4() {
 let i = 0;
 function next() {
     i++;
-    i = (i + 5) % 5
+    i = (i + 5) % 5;
     scroll(i);
     scroll2(i);
 
