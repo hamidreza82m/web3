@@ -720,7 +720,7 @@ iframe {
 
 footer {
     width: 1440px;
-    height: 341px;
+    height: 306px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     background-color: #176D73;
@@ -1055,7 +1055,9 @@ footer .margin {
     .div-footer>div {
         margin-top: auto;
     }
-
+    footer{
+        height: 358px;
+    }
     footer img {
         width: 30px;
     }
@@ -1196,5 +1198,17 @@ footer .margin {
     header img {
         width: 165px;
         height: auto;
+    }
+}
+@media (min-width:320px) and (max-width:374px) {
+    .Products img {
+        width: 73px;
+        height: 50px;
+    }
+    footer{
+        height: 384px;
+    }
+    .end span{
+        font-size: 11px;
     }
 }
