@@ -155,7 +155,7 @@ function show() {
 var target = document.querySelector('.header');
 window.addEventListener('scroll', function () {
     if (window.scrollY > 120) {
-        target.style.transform = 'translateY(-98px)';
+        target.style.transform = 'translateY(-80px)';
         document.getElementById('hover').style.transform = 'rotateZ(0deg) translateX(-50%)';
         document.getElementById('hover').classList.add('radius2');
         document.getElementById('hover').classList.remove('radius1');
@@ -172,7 +172,7 @@ window.addEventListener('scroll', function () {
     }
 });
 function header() {
-    if (target.style.transform == 'translateY(-98px)') {
+    if (target.style.transform == 'translateY(-80px)') {
         target.style.transform = 'translateY(0)';
         document.getElementById('hover').style.transform = 'rotateZ(180deg) translateX(50%)';
         document.getElementById('hover').classList.add('radius1');
@@ -180,7 +180,7 @@ function header() {
 
     }
     else {
-        target.style.transform = 'translateY(-98px)';
+        target.style.transform = 'translateY(-80px)';
         document.getElementById('hover').style.transform = 'rotateZ(0deg) translateX(-50%)';
         document.getElementById('hover').classList.add('radius2');
         document.getElementById('hover').classList.remove('radius1');

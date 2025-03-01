@@ -12,7 +12,7 @@ body {
 }
 
 #none {
-    width: 227px;
+    width: 205px;
 }
 
 .header {
@@ -22,7 +22,7 @@ body {
     background: #fff;
     filter: drop-shadow(0px 3px 2px #aeaeae);
     border-radius: 0 0 45px 45px;
-    height: 109px;
+    height: 88px;
     width: 100%;
     position: fixed;
     z-index: 8;
@@ -81,6 +81,8 @@ header button i {
     right: 40px;
     filter: drop-shadow(2px 5px 14px black);
     display: none;
+    border-radius: 60px 10px;
+
 }
 
 .animation5 {
@@ -113,17 +115,20 @@ header button i {
 
 .menu a {
     text-decoration: none;
-    padding: 29px;
+    padding: 27px;
     font-size: 17px;
     color: #fff;
     font-family: 'iranSans';
-    width: 80%;
     text-align: right;
+    border-bottom: ridge #176d7345 2px;
+    width: calc(100% - 54px);
+    filter: drop-shadow(0px 2px 2px black);
 }
-
+.menu a.ertebat{
+    border: none;
+}
 header img {
-    width: 187px;
-    height: 96px;
+    width: 145px;
     margin: 0 60px 0 0;
 }
 
@@ -267,7 +272,8 @@ header img {
 a {
     text-decoration: none;
 }
-.rectangle li{
+
+.rectangle li {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 500;
     font-size: larger;
@@ -276,6 +282,7 @@ a {
     direction: rtl;
     list-style-type: circle;
 }
+
 .Rectangle-90 h3 {
     font-family: 'iranSans';
     font-weight: 500;
@@ -304,10 +311,12 @@ a {
 
 .Rectangle-81 {
     padding: 70px 0 0;
-    background: linear-gradient(80.06deg, #38AFB3 -2.01%, rgba(96, 181, 184, 0.711926) 12.3%, rgba(137, 187, 189, 0.42001) 27%, rgba(165, 191, 192, 0.221818) 38.25%, rgba(182, 194, 194, 0.100346) 50%, rgba(196, 196, 196, 0) 45.57%);
+    background: linear-gradient(80.06deg, #38AFB3, rgba(96, 181, 184, 0.711926), rgba(137, 187, 189, 0.42001) , rgba(165, 191, 192, 0.221818) , rgba(182, 194, 194, 0.100346) , rgba(196, 196, 196, 0));
     width: 100%;
 }
-
+ul{
+    padding: 0;
+}
 .padding {
     margin: 0 85px 0 0;
 }
@@ -336,8 +345,8 @@ a {
     font-weight: 500;
     font-size: larger;
     line-height: 28.17px;
-    text-align: right;
     direction: rtl;
+    text-align: justify;
 }
 
 .Rectangle-89-2-text {
@@ -351,6 +360,8 @@ a {
     border-radius: 50%;
     position: absolute;
     right: -110px;
+    filter: drop-shadow(-12px 6px 7px #000000a3);
+    box-shadow: inset 0px 0px 40px 0px #000000c9;
 }
 
 .circle h4 {
@@ -368,6 +379,7 @@ a {
     color: #fff;
     border-radius: 59px 0 0 59px;
     padding: 20px 120px 20px 120px;
+    box-shadow: 0 0 107px inset #00000099;
 }
 
 .boxs {
@@ -460,7 +472,8 @@ a {
 }
 
 #p-moarfi {
-    margin-bottom: 175px;
+    margin: 20px 120px 175px;
+    text-align: justify;
 }
 
 .grid h6 {
@@ -473,9 +486,11 @@ a {
     text-align: right;
     margin: 24px;
 }
-#maliSlides{
+
+#maliSlides {
     display: none;
 }
+
 .grid {
     display: flex;
     flex-wrap: wrap;
@@ -483,7 +498,11 @@ a {
     justify-content: center;
     width: 100%;
 }
-#all,#mali,#servisAbri,#webSites{
+
+#all,
+#mali,
+#servisAbri,
+#webSites {
     display: none;
 }
 
@@ -645,7 +664,7 @@ form input:not(:placeholder-shown)+.labels {
     font-size: 14px;
     color: #000;
     background: #fff;
-    border-radius: 50px 50px 0 0;
+    border-radius: 20px 20px 0 0;
 }
 
 form {
@@ -783,7 +802,7 @@ footer .margin {
     background: url(./img2.png);
     background-size: cover;
     background-attachment: fixed;
-    border-radius: 90px;
+    border-radius: 0 90px 90px 0;
     margin-bottom: 70px;
     padding-bottom: 16px;
 }
@@ -791,29 +810,34 @@ footer .margin {
 #khadamat {
     transform: translateY(-63px);
 }
-.end p{
+
+.end p {
     font-family: 'iranSans';
     font-size: 9px;
     text-align: right;
     width: 70%;
     color: #bfe0cc;
 }
-.end span{
+
+.end span {
     font-size: 13px;
     color: #d1fad7;
 }
-.end a{
+
+.end a {
     color: #bfe0cc;
 }
-.end a:hover{
+
+.end a:hover {
     color: #75d4ff;
     filter: drop-shadow(-1px 2px 1px black);
 }
+
 @media (max-width:1024px) {
     .header {
         align-items: center;
         justify-content: space-around;
-        height: 96px;
+        height: 73px;
     }
 
     #none,
@@ -822,8 +846,7 @@ footer .margin {
     }
 
     header img {
-        width: 140px;
-        height: auto;
+        width: 107px;
         margin: auto;
     }
 
@@ -864,10 +887,12 @@ footer .margin {
         width: 100%;
         justify-content: space-evenly;
     }
-    .Rectangle-90 a img{
+
+    .Rectangle-90 a img {
         width: 48px;
         height: 48px;
     }
+
     .padding {
         margin: 0;
     }
@@ -929,16 +954,21 @@ footer .margin {
         font-size: x-small;
         padding: 4px 0;
     }
-    .khadamat{
-        border-radius: 35px;
-    }
-    .moshtariyan {
-        margin: 184px 36px;
+
+    .khadamat {
+        border-radius: 0 70px 70px 0;
+        margin-right:5%;
+        width: 95%;
     }
 
-    .Rectangle-81 p , .rectangle li{
+    .moshtariyan {
+        margin: 111px 36px;
+    }
+
+    .Rectangle-81 p,
+    .rectangle li {
         font-size: 15px;
-        margin: 27px 7px;
+        margin: 27px;
     }
 
     .inputs h3 {
@@ -967,7 +997,7 @@ footer .margin {
     }
 
     form input {
-        font-size: smaller;
+        font-size: 11px;
     }
 
     .labels {
@@ -992,7 +1022,9 @@ footer .margin {
         width: 219px;
         height: 38px;
     }
-
+    #p-moarfi {
+        margin: 20px 30px 175px;
+    }
     iframe {
         width: 80%;
         margin: auto;
@@ -1028,6 +1060,7 @@ footer .margin {
         position: absolute;
         top: -53px;
         right: auto;
+        box-shadow: none;
     }
 
     .circle h4 {
@@ -1038,10 +1071,11 @@ footer .margin {
         border-radius: 50%;
         width: 60px;
         height: 60px;
+        box-shadow: inset 0px 0px 32px 0px #000000c9;
     }
 
     .rectangle {
-        padding: 20px;
+        padding: 20px 10px;
     }
 
     .location .loc {
@@ -1068,9 +1102,11 @@ footer .margin {
     .div-footer>div {
         margin-top: auto;
     }
-    footer{
+
+    footer {
         height: 358px;
     }
+
     footer img {
         width: 30px;
     }
@@ -1213,15 +1249,18 @@ footer .margin {
         height: auto;
     }
 }
+
 @media (min-width:320px) and (max-width:374px) {
     .Products img {
         width: 73px;
         height: 50px;
     }
-    footer{
+
+    footer {
         height: 384px;
     }
-    .end span{
+
+    .end span {
         font-size: 11px;
     }
 }
