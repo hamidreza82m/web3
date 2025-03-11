@@ -451,7 +451,7 @@ ul{
     height: 5px;
     background-color: #FFEA00;
     position: absolute;
-    left: 76%;
+    left: 75%;
     transition: left 1s ease-in-out;
 }
 
@@ -838,6 +838,7 @@ footer .margin {
         align-items: center;
         justify-content: space-around;
         height: 73px;
+        top: 14px;
     }
 
     #none,
