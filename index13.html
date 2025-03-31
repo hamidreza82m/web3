@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RustDesk - کنترل از راه دور امن و رایگان</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./index13.css">
+    <link rel="icon" type="image/png" href="./rustdesk1.png">
+
+</head>
+
+<body>
+    <div class="theme-switch">
+        <label class="switch">
+            <input checked="true" id="theme-toggle" type="checkbox">
+            <span class="slider round">
+                <div class="star star_1"></div>
+                <div class="star star_2"></div>
+                <div class="star star_3"></div>
+                <svg viewBox="0 0 16 16" class="cloud_1 cloud">
+                    <path transform="matrix(.77976 0 0 .78395-299.99-418.63)" fill="#fff"
+                        d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925">
+                    </path>
+                </svg>
+            </span>
+        </label>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="./rustdesk1.png" alt="RustDesk Logo">
+            <h1>RustDesk</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <button id="close" onclick="show()"><lord-icon src="https://cdn.lordicon.com/nqtddedc.json"
+                        trigger="hover" state="hover-cross-3" colors="primary:#3498DB" style="width:40px;height:40px">
+                    </lord-icon></button>
+                <li><a href="#home">صفحه اصلی</a></li>
+                <li><a href="#download">دانلود</a></li>
+                <li><a href="#install">آموزش نصب</a></li>
+                <li><a href="#about">درباره ما</a></li>
+                <li><a href="#blog">بلاگ</a></li>
+            </ul>
+        </nav>
+        <!-- دکمه منو فقط برای موبایل -->
+        <button class="mobile-menu-toggle" aria-label="منو">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <section class="hero">
+        <h2>کنترل از راه دور امن و رایگان</h2>
+        <p>به رایانه‌های خود از هر جای دنیا متصل شوید! RustDesk یک نرم‌افزار متن‌باز با عملکرد عالی و امنیت بالا است.
+        </p>
+        <a href="#download" class="btn">دانلود رایگان</a>
+    </section>
+
+    <section class="features">
+        <h3>چرا RustDesk؟</h3>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <i class="fas fa-bolt"></i>
+                <h4>سریع و کم‌مصرف</h4>
+                <p>با معماری بهینه شده برای کمترین تأخیر و مصرف منابع سیستم</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-lock"></i>
+                <h4>امنیت بالا</h4>
+                <p>رمزنگاری End-to-End برای محافظت از داده‌های شما</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-server"></i>
+                <h4>سرور شخصی</h4>
+                <p>امکان راه‌اندازی سرور اختصاصی برای سازمان‌ها</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-trophy"></i>
+                <h4>جایگزین برتر برای AnyDesk</h4>
+                <p>
+                    RustDesk با امکانات رایگان، سرعت بالا و امنیت قوی‌تر،
+                    بهترین انتخاب برای جایگزینی AnyDesk است.
+                    بدون محدودیت‌های نسخه رایگان!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="download" id="download">
+        <h3>دانلود RustDesk</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>سیستم عامل</th>
+                    <th>نسخه</th>
+                    <th>لینک دانلود</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Windows(64-bit)</td>
+                    <td>1.3.8</td>
+                    <td><a href="#" class="download-link">دانلود (.exe)</a></td>
+                </tr>
+                <tr>
+                    <td>Windows(32-bit)</td>
+                    <td>1.3.8</td>
+                    <td><a href="#" class="download-link">دانلود (.exe)</a></td>
+                </tr>
+                <tr>
+                    <td>macOS x86-64 (64-bit)</td>
+                    <td>1.3.8</td>
+                    <td><a href="#" class="download-link">دانلود (.dmg)</a></td>
+                </tr>
+                <tr>
+                    <td>macOS AArch64 (ARM64)</td>
+                    <td>1.3.8</td>
+                    <td><a href="#" class="download-link">دانلود (.dmg)</a></td>
+                </tr>
+                <tr>
+                    <td>Ubuntu x86-64 (64-bit)</td>
+                    <td>1.3.8</td>
+                    <td><a href="#" class="download-link">دانلود (.deb)</a></td>
+                </tr>
+                <tr>
+                    <td>Ubuntu AArch64 (ARM64)</td>
+                    <td>1.3.8</td>
+                    <td><a href="#" class="download-link">دانلود (.deb)</a></td>
+                </tr>
+                <tr>
+                    <td>Ubuntu ARMv7 (32-bit)</td>
+                    <td>1.3.8</td>
+                    <td><a href="#" class="download-link">دانلود (.deb)</a></td>
+                </tr>
+                <tr>
+                    <td>Android AArch64 (ARM64)</td>
+                    <td>1.3.8</td>
+                    <td><a href="#" class="download-link">دانلود (APK)</a></td>
+                </tr>
+                <tr>
+                    <td>Android ARMv7 (32-bit)</td>
+                    <td>1.3.8</td>
+                    <td><a href="#" class="download-link">دانلود (APK)</a></td>
+                </tr>
+                <tr>
+                    <td>Android x86-64 (64-bit)</td>
+                    <td>1.3.8</td>
+                    <td><a href="#" class="download-link">دانلود (APK)</a></td>
+                </tr>
+                <tr>
+                    <td>Flatpak (64-bit)</td>
+                    <td>1.3.8</td>
+                    <td><a href="#" class="download-link">دانلود (.exe)</a></td>
+                </tr>
+                <tr>
+                    <td>Flatpak (ARM64)</td>
+                    <td>1.3.8</td>
+                    <td><a href="#" class="download-link">دانلود (.exe)</a></td>
+                </tr>
+                <tr>
+                    <td>ios</td>
+                    <td>1.3.8</td>
+                    <td><a href="#" class="download-link">دریافت از App Store</a></td>
+                </tr>
+                <tr>
+                    <td>web</td>
+                    <td>1.3.8</td>
+                    <td><a href="#" class="download-link">دانلود (.exe)</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+
+    </footer>
+    <script src="./index13.js"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+</body>
+
+</html>
