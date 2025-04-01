@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آموزش نصب و راه‌اندازی RustDesk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./install.css">
+    <link rel="icon" type="image/png" href="./rustdesk1.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- دکمه تغییر تم -->
+    <div class="theme-switch">
+        <label class="switch">
+            <input checked="true" id="theme-toggle" type="checkbox">
+            <span class="slider round">
+                <div class="star star_1"></div>
+                <div class="star star_2"></div>
+                <div class="star star_3"></div>
+                <svg viewBox="0 0 16 16" class="cloud_1 cloud">
+                    <path transform="matrix(.77976 0 0 .78395-299.99-418.63)" fill="#fff"
+                        d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925">
+                    </path>
+                </svg>
+            </span>
+        </label>
+    </div>
+
+    <!-- هدر -->
+    <header>
+        <div class="logo">
+            <img src="./rustdesk1.png" alt="RustDesk Logo">
+            <h1>RustDesk</h1>
+        </div>
+        
+        <nav class="main-nav">
+            <ul>
+                <li><a href="./home.html">صفحه اصلی</a></li>
+                <li><a href="./home.html#download">دانلود</a></li>
+                <li><a href="#install">آموزش نصب</a></li>
+                <li><a href="#about">درباره ما</a></li>
+                <li><a href="#blog">بلاگ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- محتوای اصلی -->
+    <div class="container" id="install">
+        <h1 style="text-align: center; color: var(--accent); margin-bottom: 30px;">آموزش نصب و راه‌اندازی RustDesk</h1>
+        
+        <div class="step">
+            <h2><span class="step-number">1</span>نصب نرم افزار</h2>
+            <p>پس از دانلود نرم افزار RustDesk، روی فایل اجرایی کلیک کنید و مطابق شکل زیر روی گزینه <strong>Install</strong> کلیک نمایید:</p>
+            <img src="./1.webp" alt="مرحله نصب RustDesk" class="screenshot">
+        </div>
+        
+        <div class="step">
+            <h2><span class="step-number">2</span>تنظیمات نصب</h2>
+            <p>پس از شروع پروسه نصب:</p>
+            <ol>
+                <li>مسیر نصب را انتخاب کنید (پیش‌فرض: <code>C:\Program Files\RustDesk</code>)</li>
+                <li>گزینه‌های زیر را فعال نمایید:
+                    <ul>
+                        <li>Create start menu shortcuts</li>
+                        <li>Create desktop icon</li>
+                        <li>Install RustDesk certificate</li>
+                    </ul>
+                </li>
+            </ol>
+            <img src="./2.webp" alt="تنظیمات نصب" class="screenshot">
+        </div>
+        
+        <div class="step">
+            <h2><span class="step-number">3</span>تایید هشدار امنیتی</h2>
+            <p>در پنجره هشدار امنیتی روی دکمه <strong>OK</strong> کلیک کنید:</p>
+            <div class="note">
+                این گواهی تستی RustDesk است که می‌توانید به آن اعتماد کنید. این گواهی برای نصب درایورهای مورد نیاز RustDesk استفاده خواهد شد.
+            </div>
+            <img src="./3.webp" alt="هشدار امنیتی" class="screenshot">
+        </div>
+        
+        <div class="step">
+            <h2><span class="step-number">4</span>ورود به تنظیمات شبکه</h2>
+            <p>پس از تکمیل نصب:</p>
+            <ol>
+                <li>روی <strong>Settings</strong> (سه نقطه) کلیک کنید</li>
+                <li>به تب <strong>Network</strong> بروید</li>
+            </ol>
+            <img src="./4.webp" alt="ورود به تنظیمات" class="screenshot">
+        </div>
+        
+        <div class="step">
+            <h2><span class="step-number">5</span>تنظیم سرور اختصاصی</h2>
+            <p>در بخش Network:</p>
+            <ol>
+                <li>روی <strong>Unlock network settings</strong> دابل کلیک کنید</li>
+                <li>مقادیر زیر را وارد نمایید:
+                    <ul>
+                        <li>ID server: <code>rustdesk.ir</code></li>
+                        <li>Relay server: <code>rustdesk.ir</code></li>
+                    </ul>
+                </li>
+                <li>روی دکمه <strong>Apply</strong> کلیک کنید</li>
+            </ol>
+            <img src="./5.webp" alt="تنظیمات شبکه" class="screenshot">
+            <img src="./7.png" alt="تنظیم سرور" class="screenshot">
+        </div>
+        
+        <div class="step">
+            <h2><span class="step-number">6</span>آماده به کار</h2>
+            <p>اکنون RustDesk شما آماده استفاده است. می‌توانید:</p>
+            <ul>
+                <li>ID خود را به پشتیبان یا فرد مورد نظر بدهید</li>
+                <li>برای اتصال به سیستم دیگر، ID آن سیستم را وارد کنید</li>
+                <li>از امکانات انتقال فایل استفاده نمایید</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 RustDesk. تمام حقوق محفوظ است.</p>
+    </footer>
+
+    <script src="./rustdesk.js"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "RustDesk",
+          "operatingSystem": "Windows, macOS, Linux, Android, iOS",
+          "applicationCategory": "RemoteDesktopApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        }
+    </script>
+</body>
+</html>
