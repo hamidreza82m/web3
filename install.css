@@ -23,12 +23,14 @@
     --accent: var(--light-accent);
     --header: var(--light-header);
 }
+
 @font-face {
     font-family: iranSans;
     src: url(./IRANSansWeb\(FaNum\)_Bold.ttf) format(ttf),
         url(./IRANSansWeb\(FaNum\)_Bold.eot) format(eoy),
         url(./IRANSansWeb\(FaNum\)_Bold.woff) format(woff);
 }
+
 body {
     font-family: 'IRANSans', 'Poppins', sans-serif;
     background-color: var(--bg);
@@ -79,12 +81,13 @@ header {
     color: white;
     padding: 1rem 2rem;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 10;
     box-shadow: 1px 9px 10px rgb(0 0 0 / 13%);
+    flex-direction: row-reverse;
 }
 
 .logo {
@@ -197,7 +200,6 @@ footer {
 /* رسپانسیو */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
         padding: 1rem;
     }
 
@@ -326,4 +328,71 @@ body.dark-mode code {
 .hero-logo:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px 0 10px 20px;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+#close {
+    border: none;
+    background: none;
+    width: 50px;
+    top: 20px;
+    position: absolute;
+    right: 76%;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    #close {
+        display: block;
+    }
+
+    .main-nav li {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: var(--card);
+        box-shadow: -5px 0 20px 2px rgb(0 0 0 / 57%);
+        transition: right 0.3s ease;
+        padding-top: 80px;
+    }
+
+    .main-nav.active {
+        right: 0;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .main-nav li {
+        padding-bottom: 8px;
+        margin-bottom: 10px;
+    }
 }
