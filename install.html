@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="icon" type="image/png" href="./rustdesk1.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
     <!-- دکمه تغییر تم -->
     <div class="theme-switch">
@@ -33,12 +35,12 @@
             <img src="./rustdesk1.png" alt="RustDesk Logo">
             <h1>RustDesk</h1>
         </div>
-        
+
         <nav class="main-nav">
             <ul>
                 <button id="close" onclick="show()"><lord-icon src="https://cdn.lordicon.com/nqtddedc.json"
-                    trigger="hover" state="hover-cross-3" colors="primary:#3498DB" style="width:40px;height:40px">
-                </lord-icon></button>
+                        trigger="hover" state="hover-cross-3" colors="primary:#3498DB" style="width:40px;height:40px">
+                    </lord-icon></button>
                 <li><a href="./home.html">صفحه اصلی</a></li>
                 <li><a href="./home.html#download">دانلود</a></li>
                 <li><a href="#install">آموزش نصب</a></li>
@@ -56,13 +58,14 @@
     <!-- محتوای اصلی -->
     <div class="container" id="install">
         <h1 style="text-align: center; color: var(--accent); margin-bottom: 30px;">آموزش نصب و راه‌اندازی RustDesk</h1>
-        
+
         <div class="step">
             <h2><span class="step-number">1</span>نصب نرم افزار</h2>
-            <p>پس از دانلود نرم افزار RustDesk، روی فایل اجرایی کلیک کنید و مطابق شکل زیر روی گزینه <strong>Install</strong> کلیک نمایید:</p>
+            <p>پس از دانلود نرم افزار RustDesk، روی فایل اجرایی کلیک کنید و مطابق شکل زیر روی گزینه
+                <strong>Install</strong> کلیک نمایید:</p>
             <img src="./1.webp" alt="مرحله نصب RustDesk" class="screenshot">
         </div>
-        
+
         <div class="step">
             <h2><span class="step-number">2</span>تنظیمات نصب</h2>
             <p>پس از شروع پروسه نصب:</p>
@@ -78,16 +81,17 @@
             </ol>
             <img src="./2.webp" alt="تنظیمات نصب" class="screenshot">
         </div>
-        
+
         <div class="step">
             <h2><span class="step-number">3</span>تایید هشدار امنیتی</h2>
             <p>در پنجره هشدار امنیتی روی دکمه <strong>OK</strong> کلیک کنید:</p>
             <div class="note">
-                این گواهی تستی RustDesk است که می‌توانید به آن اعتماد کنید. این گواهی برای نصب درایورهای مورد نیاز RustDesk استفاده خواهد شد.
+                این گواهی تستی RustDesk است که می‌توانید به آن اعتماد کنید. این گواهی برای نصب درایورهای مورد نیاز
+                RustDesk استفاده خواهد شد.
             </div>
             <img src="./3.webp" alt="هشدار امنیتی" class="screenshot">
         </div>
-        
+
         <div class="step">
             <h2><span class="step-number">4</span>ورود به تنظیمات شبکه</h2>
             <p>پس از تکمیل نصب:</p>
@@ -97,7 +101,7 @@
             </ol>
             <img src="./4.webp" alt="ورود به تنظیمات" class="screenshot">
         </div>
-        
+
         <div class="step">
             <h2><span class="step-number">5</span>تنظیم سرور اختصاصی</h2>
             <p>در بخش Network:</p>
@@ -105,16 +109,23 @@
                 <li>روی <strong>Unlock network settings</strong> دابل کلیک کنید</li>
                 <li>مقادیر زیر را وارد نمایید:
                     <ul>
-                        <li>ID server: <code>rustdesk.ir</code></li>
-                        <li>Relay server: <code>rustdesk.ir</code></li>
+                        <li>ID server: <code>iranrustdesk.ir</code></li>
+                        <li>Relay server: <code>iranrustdesk.ir</code></li>
                     </ul>
                 </li>
                 <li>روی دکمه <strong>Apply</strong> کلیک کنید</li>
             </ol>
+            
+            <div class="note">
+                <i class="fas fa-info-circle"></i>
+                <strong>نکته مهم:</strong> می‌توانید از سرورهای دیگر نیز استفاده کنید. 
+                
+            </div>
+            
             <img src="./5.webp" alt="تنظیمات شبکه" class="screenshot">
             <img src="./7.png" alt="تنظیم سرور" class="screenshot">
         </div>
-        
+
         <div class="step">
             <h2><span class="step-number">6</span>آماده به کار</h2>
             <p>اکنون RustDesk شما آماده استفاده است. می‌توانید:</p>
@@ -125,9 +136,71 @@
             </ul>
         </div>
     </div>
-    
-    <footer>
-        <p>© 2023 RustDesk. تمام حقوق محفوظ است.</p>
+    <div class="connection-status">
+        <h2><i class="fas fa-network-wired"></i> وضعیت اتصال RustDesk</h2>
+
+        <div class="status-box connected">
+            <h3>وضعیت متصل <span class="badge success"><i class="fas fa-check-circle"></i> متصل</span></h3>
+            <img src="9.jpg" alt="وضعیت اتصال موفق" class="screenshot">
+            <div class="status-details">
+                <p>زمانی که RustDesk با موفقیت به سرور متصل باشد:</p>
+                <ul>
+                    <li><strong>ID دستگاه شما</strong> نمایش داده می‌شود (مثال: <code>137 362 524</code>)</li>
+                    <li><strong>رمز یکبارمصرف</strong> برای اتصال نشان داده می‌شود (مثال: <code>uaceeu</code>)</li>
+                    <li>پیام <span class="ready-status">Ready</span> در پایین پنجره ظاهر می‌شود</li>
+                    <li>دکمه‌های <span class="btn-example">Transfer file</span> و <span
+                            class="btn-example">Connect</span> فعال هستند</li>
+                    <li>لیست دستگاه‌های متصل قابل مشاهده است</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="status-box disconnected">
+            <h3>وضعیت قطع ارتباط <span class="badge error"><i class="fas fa-exclamation-triangle"></i> قطع</span></h3>
+            <img src="10.jpg" alt="وضعیت قطع اتصال" class="screenshot">
+            <div class="status-details">
+                <p>زمانی که اتصال RustDesk قطع باشد:</p>
+                <ul>
+                    <li>پیام <span class="connecting-status">Connecting to the RustDesk network...</span> نمایش داده
+                        می‌شود</li>
+                    <li>ممکن است ID دستگاه و رمز یکبارمصرف نشان داده نشوند</li>
+                    <li>دکمه‌های ارتباطی غیرفعال می‌شوند</li>
+                    <li>این وضعیت معمولاً به دلایل زیر رخ می‌دهد:
+                        <ul>
+                            <li>مشکلات شبکه یا اینترنت</li>
+                            <li>مشکلات سرور RustDesk</li>
+                            <li>تنظیمات نادرست شبکه</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="note warning">
+                    <i class="fas fa-exclamation-circle"></i>
+                    در این حالت، ابتدا اتصال اینترنت خود را بررسی کنید، سپس از صحت تنظیمات شبکه در RustDesk اطمینان حاصل
+                    نمایید.
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-message">
+                <p>
+                    <span class="footer-hero">پلتفرم RustDesk</span>
+                    توسعه یافته توسط 
+                    <a href="https://daneshvaransarmad.co.ir/" target="_blank" class="footer-link">دانشوران سرمد</a>
+                    <span class="footer-separator">|</span>
+                    محصول 
+                    <a href="https://hushasoft.ir/" target="_blank" class="footer-link">هوشا سافت</a>
+                    <span class="footer-separator">|</span>
+                    اجرا:
+                    <a href="https://hamidreza82m.github.io/" target="_blank" class="footer-link">حمیدرضا محمدی</a>
+                </p>
+            </div>
+            <div class="footer-credits">
+                <p class="footer-heart">راه‌اندازی شده با <span class="heart">❤️</span></p>
+                <p class="copyright">© 2025 - تمام حقوق محفوظ است</p>
+            </div>
+        </div>
     </footer>
 
     <script src="./rustdesk.js"></script>
@@ -147,4 +220,5 @@
         }
     </script>
 </body>
+
 </html>

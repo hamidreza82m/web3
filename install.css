@@ -33,6 +33,7 @@
 
 body {
     font-family: 'IRANSans', 'Poppins', sans-serif;
+    font-size: .9rem;
     background-color: var(--bg);
     color: var(--text);
     margin: 0;
@@ -77,27 +78,29 @@ input:checked+.slider:before {
 }
 
 header {
-    background: linear-gradient(135deg, var(--accent) 0%, #2c3e50 100%);
+    background: var(--card);
     color: white;
     padding: 1rem 2rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 10;
     box-shadow: 1px 9px 10px rgb(0 0 0 / 13%);
-    flex-direction: row-reverse;
+    flex-direction: row;
 }
 
 .logo {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    gap: 2px;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .logo img {
-    height: 40px;
+    height: 33px;
 }
 
 .logo h1 {
@@ -117,7 +120,7 @@ header {
 
 .main-nav a {
     text-decoration: none;
-    color: white;
+    color: var(--text);
     font-weight: 500;
     padding: 8px 12px;
     border-radius: 4px;
@@ -188,16 +191,7 @@ code {
     font-family: monospace;
 }
 
-/* فوتر */
-footer {
-    text-align: center;
-    margin-top: 50px;
-    padding: 20px;
-    background: linear-gradient(135deg, var(--accent) 0%, #2c3e50 100%);
-    color: white;
-}
 
-/* رسپانسیو */
 @media (max-width: 768px) {
     header {
         padding: 1rem;
@@ -213,9 +207,13 @@ footer {
     .container {
         padding: 1rem;
     }
+
+    header {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
 }
 
-/* تم تاریک */
 body.dark-mode {
     --bg: var(--dark-bg);
     --text: var(--dark-text);
@@ -395,4 +393,214 @@ body.dark-mode code {
         padding-bottom: 8px;
         margin-bottom: 10px;
     }
+}
+.connection-status {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: var(--card);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.status-box {
+    margin: 30px 0;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid;
+}
+
+.status-box.connected {
+    border-left-color: #2ecc71;
+    background-color: rgb(46 204 113 / 13%);
+}
+
+.status-box.disconnected {
+    border-left-color: #e74c3c;
+    background-color: rgb(231 76 60 / 16%);
+}
+
+.status-box h3 {
+    margin-top: 0;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.badge.success {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.badge.error {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.screenshot {
+    max-width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    margin: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.status-details {
+    margin-top: 15px;
+}
+
+.ready-status {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.connecting-status {
+    color: #e67e22;
+    font-weight: bold;
+}
+
+.btn-example {
+    display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.note {
+    padding: 12px;
+    border-radius: 5px;
+    margin: 15px 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.note.warning {
+    background-color: rgba(230, 126, 34, 0.1);
+    border-right: 3px solid #e67e22;
+}
+
+.note i {
+    margin-left: 8px;
+    color: #e67e22;
+}
+
+@media (max-width: 768px) {
+    .status-box {
+        padding: 15px;
+    }
+}
+/* footer */
+.site-footer {
+    background-color: var(--bg);
+    color: var(--text-light);
+    padding: 2rem 1rem;
+    font-family: 'IRANSans', Tahoma, sans-serif;
+    border-top: 1px solid var(--border);
+    margin-top: 3rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.footer-hero {
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.footer-link {
+    color: var(--accent-light);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    padding: 0 3px;
+}
+
+.footer-link:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.footer-separator {
+    color: var(--text-secondary);
+    margin: 0 10px;
+    font-weight: 300;
+}
+
+.footer-credits {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.copyright {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+.heart {
+    color: #ff4757;
+    animation: heartbeat 1.5s infinite;
+    display: inline-block;
+}
+
+.footer-heart {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    75% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* رسپانسیو */
+@media (max-width: 768px) {
+    .footer-message p {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .footer-separator {
+        display: none;
+    }
+}
+
+a[href="https://hamidreza82m.github.io/"] {
+    font-size: .7rem;
 }
