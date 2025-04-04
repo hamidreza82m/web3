@@ -748,3 +748,49 @@ header {
 a[href="https://hamidreza82m.github.io/"] {
     font-size: .7rem;
 }
+.download-stats {
+    background-color: var(--card);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.download-stats h3 {
+    color: var(--accent);
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 15px;
+    background-color: var(--bg);
+    border-radius: 8px;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
