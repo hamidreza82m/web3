@@ -62,7 +62,8 @@
         <div class="step">
             <h2><span class="step-number">1</span>نصب نرم افزار</h2>
             <p>پس از دانلود نرم افزار RustDesk، روی فایل اجرایی کلیک کنید و مطابق شکل زیر روی گزینه
-                <strong>Install</strong> کلیک نمایید:</p>
+                <strong>Install</strong> کلیک نمایید:
+            </p>
             <img src="./1.webp" alt="مرحله نصب RustDesk" class="screenshot">
         </div>
 
@@ -114,17 +115,66 @@
                 </li>
                 <li>روی دکمه <strong>Apply</strong> کلیک کنید</li>
             </ol>
-            
+
             <div class="note">
                 <i class="fas fa-info-circle"></i>
-                <strong>نکته مهم:</strong> می‌توانید از سرورهای دیگر نیز استفاده کنید. 
-                
+                <strong>نکته مهم:</strong> می‌توانید از سرورهای دیگر نیز استفاده کنید.
+
             </div>
-            
+
             <img src="./5.webp" alt="تنظیمات شبکه" class="screenshot">
             <img src="./7.png" alt="تنظیم سرور" class="screenshot">
         </div>
+        <div class="important-note">
+            <div class="note-header">
+                <i class="fas fa-network-wired"></i>
+                <h3>شرط اتصال موفق بین دو دستگاه</h3>
+            </div>
+            <div class="note-content">
+                <p>برای ارتباط صحیح بین دو دستگاه در RustDesk، <strong>تنظیمات سرور (ID/Relay Server)</strong> باید در
+                    هر دو دستگاه یکسان باشد:</p>
 
+                <div class="server-examples">
+                    <div class="server-case connect">
+                        <span class="case-label">اتصال موفق:</span>
+                        <div class="server-pair">
+                            <div class="device">
+                                <i class="fas fa-desktop"></i>
+                                <span>دستگاه اول</span>
+                                <code>rustdesk.ir</code>
+                            </div>
+                            <div class="connection-arrow">
+                                <i class="fas fa-arrows-alt-h"></i>
+                            </div>
+                            <div class="device">
+                                <i class="fas fa-laptop"></i>
+                                <span>دستگاه دوم</span>
+                                <code>rustdesk.ir</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="server-case disconnect">
+                        <span class="case-label">اتصال ناموفق:</span>
+                        <div class="server-pair">
+                            <div class="device">
+                                <i class="fas fa-desktop"></i>
+                                <span>دستگاه اول</span>
+                                <code>rustdesk.ir</code>
+                            </div>
+                            <div class="connection-arrow error">
+                                <i class="fas fa-times-circle"></i>
+                            </div>
+                            <div class="device">
+                                <i class="fas fa-laptop"></i>
+                                <span>دستگاه دوم</span>
+                                <code>iranrustdesk.ir</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="step">
             <h2><span class="step-number">6</span>آماده به کار</h2>
             <p>اکنون RustDesk شما آماده استفاده است. می‌توانید:</p>
@@ -134,61 +184,64 @@
                 <li>از امکانات انتقال فایل استفاده نمایید</li>
             </ul>
         </div>
-    </div>
-    <div class="connection-status">
-        <h2><i class="fas fa-network-wired"></i> وضعیت اتصال RustDesk</h2>
+        <div class="connection-status">
+            <h2><i class="fas fa-network-wired"></i> وضعیت اتصال RustDesk</h2>
 
-        <div class="status-box connected">
-            <h3>وضعیت متصل <span class="badge success"><i class="fas fa-check-circle"></i> متصل</span></h3>
-            <img src="9.jpg" alt="وضعیت اتصال موفق" class="screenshot">
-            <div class="status-details">
-                <p>زمانی که RustDesk با موفقیت به سرور متصل باشد:</p>
-                <ul>
-                    <li><strong>ID دستگاه شما</strong> نمایش داده می‌شود (مثال: <code>137 362 524</code>)</li>
-                    <li><strong>رمز یکبارمصرف</strong> برای اتصال نشان داده می‌شود (مثال: <code>uaceeu</code>)</li>
-                    <li>پیام <span class="ready-status">Ready</span> در پایین پنجره ظاهر می‌شود</li>
-                    <li>دکمه‌های <span class="btn-example">Transfer file</span> و <span
-                            class="btn-example">Connect</span> فعال هستند</li>
-                    <li>لیست دستگاه‌های متصل قابل مشاهده است</li>
-                </ul>
+            <div class="status-box connected">
+                <h3>وضعیت متصل <span class="badge success"><i class="fas fa-check-circle"></i> متصل</span></h3>
+                <img src="9.jpg" alt="وضعیت اتصال موفق" class="screenshot">
+                <div class="status-details">
+                    <p>زمانی که RustDesk با موفقیت به سرور متصل باشد:</p>
+                    <ul>
+                        <li><strong>ID دستگاه شما</strong> نمایش داده می‌شود (مثال: <code>137 362 524</code>)</li>
+                        <li><strong>رمز یکبارمصرف</strong> برای اتصال نشان داده می‌شود (مثال: <code>uaceeu</code>)</li>
+                        <li>پیام <span class="ready-status">Ready</span> در پایین پنجره ظاهر می‌شود</li>
+                        <li>دکمه‌های <span class="btn-example">Transfer file</span> و <span
+                                class="btn-example">Connect</span> فعال هستند</li>
+                        <li>لیست دستگاه‌های متصل قابل مشاهده است</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <div class="status-box disconnected">
-            <h3>وضعیت قطع ارتباط <span class="badge error"><i class="fas fa-exclamation-triangle"></i> قطع</span></h3>
-            <img src="10.jpg" alt="وضعیت قطع اتصال" class="screenshot">
-            <div class="status-details">
-                <p>زمانی که اتصال RustDesk قطع باشد:</p>
-                <ul>
-                    <li>پیام <span class="connecting-status">...Connecting to the RustDesk network</span> نمایش داده
-                        می‌شود</li>
-                    <li>ممکن است ID دستگاه و رمز یکبارمصرف نشان داده نشوند</li>
-                    <li>دکمه‌های ارتباطی غیرفعال می‌شوند</li>
-                    <li>این وضعیت معمولاً به دلایل زیر رخ می‌دهد:
-                        <ul>
-                            <li>مشکلات شبکه یا اینترنت</li>
-                            <li>مشکلات سرور RustDesk</li>
-                            <li>تنظیمات نادرست شبکه</li>
-                        </ul>
-                    </li>
-                </ul>
-                <div class="note warning">
-                    <i class="fas fa-exclamation-circle"></i>
-                    در این حالت، ابتدا اتصال اینترنت خود را بررسی کنید، سپس از صحت تنظیمات شبکه در RustDesk اطمینان حاصل
-                    نمایید.
+            <div class="status-box disconnected">
+                <h3>وضعیت قطع ارتباط <span class="badge error"><i class="fas fa-exclamation-triangle"></i> قطع</span>
+                </h3>
+                <img src="10.jpg" alt="وضعیت قطع اتصال" class="screenshot">
+                <div class="status-details">
+                    <p>زمانی که اتصال RustDesk قطع باشد:</p>
+                    <ul>
+                        <li>پیام <span class="connecting-status">...Connecting to the RustDesk network</span> نمایش داده
+                            می‌شود</li>
+                        <li>ممکن است ID دستگاه و رمز یکبارمصرف نشان داده نشوند</li>
+                        <li>دکمه‌های ارتباطی غیرفعال می‌شوند</li>
+                        <li>این وضعیت معمولاً به دلایل زیر رخ می‌دهد:
+                            <ul>
+                                <li>مشکلات شبکه یا اینترنت</li>
+                                <li>مشکلات سرور RustDesk</li>
+                                <li>تنظیمات نادرست شبکه</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="note warning">
+                        <i class="fas fa-exclamation-circle"></i>
+                        در این حالت، ابتدا اتصال اینترنت خود را بررسی کنید، سپس از صحت تنظیمات شبکه در RustDesk اطمینان
+                        حاصل
+                        نمایید.
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-message">
                 <p>
                     <span class="footer-hero">پلتفرم RustDesk</span>
-                    توسعه یافته توسط 
+                    توسعه یافته توسط
                     <a href="https://daneshvaransarmad.co.ir/" target="_blank" class="footer-link">دانشوران سرمد</a>
                     <span class="footer-separator">|</span>
-                    محصول 
+                    محصول
                     <a href="https://hushasoft.ir/" target="_blank" class="footer-link">هوشا سافت</a>
                     <span class="footer-separator">|</span>
                     اجرا:

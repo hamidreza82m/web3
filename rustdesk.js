@@ -94,3 +94,29 @@ document.addEventListener('DOMContentLoaded', function() {
         updateStatsDisplay(savedStats);
     }
 });
+// اسکریپت مدیریت انیمیشن‌های اسکرول
+document.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('[data-aos]');
+    
+    function checkPosition() {
+        const windowHeight = window.innerHeight;
+        const scrollPosition = window.scrollY + (windowHeight * 0.8);
+        
+        elements.forEach(element => {
+            const elementPosition = element.offsetTop;
+            
+            if (scrollPosition > elementPosition) {
+                element.classList.add('aos-animate');
+            } else if (!element.getAttribute('data-aos-once')) {
+                element.classList.remove('aos-animate');
+            }
+        });
+    }
+    
+    // اجرای اولیه
+    checkPosition();
+    
+    // اضافه کردن event listener
+    window.addEventListener('scroll', checkPosition);
+    window.addEventListener('resize', checkPosition);
+});
