@@ -494,7 +494,6 @@ header {
     transition: transform 0.3s ease;
 }
 
-/* From Uiverse.io by d3uceY */
 .download-btn {
     height: 47px;
     width: 110px;
@@ -542,7 +541,6 @@ header {
     transition: opacity ease-in-out 250ms;
 }
 
-/* hover state for the button */
 .download-btn:hover .button-content {
     transform: translateY(0px);
 }
@@ -638,7 +636,6 @@ header {
     }
 }
 
-/* footer */
 .site-footer {
     background-color: var(--card);
     color: var(--text-light);
@@ -730,7 +727,6 @@ header {
     }
 }
 
-/* رسپانسیو */
 @media (max-width: 768px) {
     .footer-message p {
         display: flex;
@@ -790,12 +786,10 @@ a[href="https://hamidreza82m.github.io/"] {
 
 
 /* animation */
-/* انیمیشن‌های پایه */
 [data-aos] {
     transition: all 0.6s ease;
 }
 
-/* fade-up */
 [data-aos="fade-up"] {
     opacity: 0;
     transform: translateY(30px);
@@ -806,7 +800,6 @@ a[href="https://hamidreza82m.github.io/"] {
     transform: translateY(0);
 }
 
-/* fade-down */
 [data-aos="fade-down"] {
     opacity: 0;
     transform: translateY(-30px);
@@ -817,7 +810,6 @@ a[href="https://hamidreza82m.github.io/"] {
     transform: translateY(0);
 }
 
-/* fade-right */
 [data-aos="fade-right"] {
     opacity: 0;
     transform: translateX(-30px);
@@ -828,7 +820,6 @@ a[href="https://hamidreza82m.github.io/"] {
     transform: translateX(0);
 }
 
-/* fade-left */
 [data-aos="fade-left"] {
     opacity: 0;
     transform: translateX(30px);
@@ -839,7 +830,6 @@ a[href="https://hamidreza82m.github.io/"] {
     transform: translateX(0);
 }
 
-/* zoom-in */
 [data-aos="zoom-in"] {
     opacity: 0;
     transform: scale(0.9);
@@ -850,7 +840,6 @@ a[href="https://hamidreza82m.github.io/"] {
     transform: scale(1);
 }
 
-/* flip-left */
 [data-aos="flip-left"] {
     transform: perspective(1000px) rotateY(-90deg);
     opacity: 0;
@@ -862,24 +851,6 @@ a[href="https://hamidreza82m.github.io/"] {
     opacity: 1;
 }
 
-/* انیمیشن برای دکمه‌ها */
-[data-aos="pulse-hover"].aos-animate {
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.05);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
 
 @media (max-width: 480px) {
     .stats-grid {
@@ -898,5 +869,8 @@ a[href="https://hamidreza82m.github.io/"] {
     [data-aos="fade-left"].aos-animate {
         opacity: 1;
         transform: translateY(0);
+    }
+    td{
+        font-size: .75rem;
     }
 }

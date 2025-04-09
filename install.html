@@ -3,16 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>آموزش نصب و راه‌اندازی RustDesk</title>
+    <meta name="title" content="دریافت، آموزش نصب و راه‌اندازی RustDesk (راست‌دسک) - نرم افزار کنترل از راه دور رایگان
+    ">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./install.css">
     <link rel="icon" type="image/png" href="./rustdesk1.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>آموزش نصب و راه‌اندازی RustDesk (راست‌دسک) | نرم‌افزار کنترل از راه دور رایگان </title>
+    <meta name="description"
+        content="آموزش کامل نصب و تنظیم RustDesk (جایگزین TeamViewer و AnyDesk) با تصاویر مرحله‌به‌مرحله. دانلود آخرین نسخه + تنظیم سرور اختصاصی و رفع مشکلات اتصال">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="آموزش نصب و راه‌اندازی RustDesk (راست‌دسک) | نرم‌افزار کنترل از راه دور رایگان">
+    <meta property="og:description"
+        content="آموزش تصویری نصب RustDesk روی ویندوز، مک و لینوکس. تنظیم سرور شخصی و حل خطاهای رایج اتصال">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="آموزش نصب و راه‌اندازی RustDesk (راست‌دسک) | نرم‌افزار کنترل از راه دور رایگان">
+    <meta property="twitter:description"
+        content="راهنمای تصویری نصب و استفاده از RustDesk به عنوان جایگزین رایگان نرم‌افزارهای کنترل از راه دور">
+    <link rel="canonical" href="https://rustdesk.ir" />
 </head>
 
 <body>
-    <!-- دکمه تغییر تم -->
     <div class="theme-switch">
         <label class="switch">
             <input checked="true" id="theme-toggle" type="checkbox">
@@ -29,8 +43,7 @@
         </label>
     </div>
 
-    <!-- هدر -->
-    <header>
+    <header data-aos="fade-down">
         <div class="logo">
             <img src="./rustdesk1.png" alt="RustDesk Logo">
             <h1>RustDesk</h1>
@@ -41,8 +54,8 @@
                 <button id="close" onclick="show()"><lord-icon src="https://cdn.lordicon.com/nqtddedc.json"
                         trigger="hover" state="hover-cross-3" colors="primary:#3498DB" style="width:40px;height:40px">
                     </lord-icon></button>
-                <li><a href="./home.html">صفحه اصلی</a></li>
-                <li><a href="./home.html#download">دانلود</a></li>
+                <li><a href="./index.html">صفحه اصلی</a></li>
+                <li><a href="./index.html#download">دانلود</a></li>
                 <li><a href="#install">آموزش نصب</a></li>
                 <li><a href="#about">درباره ما</a></li>
                 <li><a href="#blog">بلاگ</a></li>
@@ -55,11 +68,11 @@
         </button>
     </header>
 
-    <!-- محتوای اصلی -->
+
     <div class="container" id="install">
         <h1 style="text-align: center; color: var(--accent); margin-bottom: 30px;">آموزش نصب و راه‌اندازی RustDesk</h1>
 
-        <div class="step">
+        <div class="step" data-aos="fade-up">
             <h2><span class="step-number">1</span>نصب نرم افزار</h2>
             <p>پس از دانلود نرم افزار RustDesk، روی فایل اجرایی کلیک کنید و مطابق شکل زیر روی گزینه
                 <strong>Install</strong> کلیک نمایید:
@@ -67,7 +80,7 @@
             <img src="./1.webp" alt="مرحله نصب RustDesk" class="screenshot">
         </div>
 
-        <div class="step">
+        <div class="step" data-aos="fade-up">
             <h2><span class="step-number">2</span>تنظیمات نصب</h2>
             <p>پس از شروع پروسه نصب:</p>
             <ol>
@@ -83,7 +96,7 @@
             <img src="./2.webp" alt="تنظیمات نصب" class="screenshot">
         </div>
 
-        <div class="step">
+        <div class="step" data-aos="fade-up">
             <h2><span class="step-number">3</span>تایید هشدار امنیتی</h2>
             <p>در پنجره هشدار امنیتی روی دکمه <strong>OK</strong> کلیک کنید:</p>
             <div class="note">
@@ -93,7 +106,7 @@
             <img src="./3.webp" alt="هشدار امنیتی" class="screenshot">
         </div>
 
-        <div class="step">
+        <div class="step" data-aos="fade-up">
             <h2><span class="step-number">4</span>ورود به تنظیمات شبکه</h2>
             <p>پس از تکمیل نصب:</p>
             <ol>
@@ -103,7 +116,7 @@
             <img src="./4.webp" alt="ورود به تنظیمات" class="screenshot">
         </div>
 
-        <div class="step">
+        <div class="step" data-aos="fade-up">
             <h2><span class="step-number">5</span>تنظیم سرور اختصاصی</h2>
             <p>در بخش Network:</p>
             <ol>
@@ -125,7 +138,7 @@
             <img src="./5.webp" alt="تنظیمات شبکه" class="screenshot">
             <img src="./7.png" alt="تنظیم سرور" class="screenshot">
         </div>
-        <div class="important-note">
+        <div class="important-note" data-aos="fade-up">
             <div class="note-header">
                 <i class="fas fa-network-wired"></i>
                 <h3>شرط اتصال موفق بین دو دستگاه</h3>
@@ -175,7 +188,7 @@
                 </div>
             </div>
         </div>
-        <div class="step">
+        <div class="step" data-aos="fade-up">
             <h2><span class="step-number">6</span>آماده به کار</h2>
             <p>اکنون RustDesk شما آماده استفاده است. می‌توانید:</p>
             <ul>
@@ -184,7 +197,7 @@
                 <li>از امکانات انتقال فایل استفاده نمایید</li>
             </ul>
         </div>
-        <div class="connection-status">
+        <div class="connection-status" data-aos="fade-up">
             <h2><i class="fas fa-network-wired"></i> وضعیت اتصال RustDesk</h2>
 
             <div class="status-box connected">
@@ -233,7 +246,7 @@
         </div>
     </div>
 
-    <footer class="site-footer">
+    <footer class="site-footer" data-aos="fade-up">
         <div class="footer-container">
             <div class="footer-message">
                 <p>
