@@ -816,7 +816,7 @@ form input:focus+.labels,
 form input:not(:placeholder-shown)+.labels
 ,form textarea:focus+.labels,
 form textarea:not(:placeholder-shown)+.labels {
-    transform: translate(-10%, -36px);
+    transform: translate(-10%, -35px);
     font-size: 14px;
     color: #ffffff;
     background: #1a1a1a;
