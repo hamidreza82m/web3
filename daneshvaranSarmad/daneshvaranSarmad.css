@@ -8,6 +8,48 @@
     src: url(./B_Yekan/Yekan.ttf);
 }
 
+@font-face {
+    font-family: 'Babylonica';
+    src: url(./Babylonica-Regular.ttf);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* برای مرورگرهای مبتنی بر WebKit مانند کروم و سافاری */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* برای فایرفاکس */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+/* اضافه کردن انیمیشن برای روان‌تر شدن اسکرول */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+
 * {
     direction: rtl;
 }
@@ -24,9 +66,11 @@ a {
     --dark-card: #D4C9BE;
     --dark-text-card: #E3DCD5;
     --dark-text-black: #F1EFEC;
-    --dark-recaptcha : #123458;
-    
-    
+    --dark-recaptcha: #123458;
+    --dark-background: url(./Group2.png);
+    --dark-footer: url(./footer-dark.png);
+
+
     /* تم روشن */
     --light-bg: #f1efec;
     --light-text-blue: #123458;
@@ -34,7 +78,9 @@ a {
     --light-card: #D4C9BE;
     --light-text-card: #E3DCD5;
     --light-text-black: #000000;
-    --light-recaptcha : #d4c9be;
+    --light-recaptcha: #d4c9be;
+    --light-background: url(./Mask\ group.png);
+    --light-footer: url(./footer-light.png);
 
     --bg: var(--light-bg);
     --text-blue: var(--light-text-blue);
@@ -43,9 +89,8 @@ a {
     --text-black: var(--light-text-black);
     --text: var(--light-text);
     --recaptcha: var(--light-recaptcha);
-
-
-
+    --background: var(--light-background);
+    --footer: var(--light-footer);
 
 
 
@@ -55,7 +100,7 @@ a {
 
 body {
     margin: 0;
-    background: url(./Mask\ group.png) var(--bg);
+    background: var(--background) var(--bg);
     background-size: cover;
     background-position: right;
 }
@@ -68,7 +113,8 @@ body.dark-mode {
     --text-black: var(--dark-text-black);
     --text: var(--dark-text);
     --recaptcha: var(--dark-recaptcha);
-    background-blend-mode: color-burn;
+    --background: var(--dark-background);
+    --footer: var(--dark-footer);
 }
 
 body.dark-mode .note {
@@ -601,22 +647,13 @@ section.products {
 form {
     background: url(./Mask\ group\ \(1\).png) var(--text-blue);
     width: 913px;
-    height: 504px;
     justify-self: center;
     padding: 35px 17px 30px 50px;
     display: flex;
     flex-direction: column;
 }
 
-.labels,
-.inputs {
-    display: flex;
-    flex-direction: column;
-    padding: 0 20px;
-    position: relative;
-}
-
-.labels label {
+label {
     margin: 15px 0;
     font-family: 'BYekan';
     font-weight: 400;
@@ -625,13 +662,11 @@ form {
     letter-spacing: 0;
     text-align: right;
     color: #F1EFEC;
+    transition: all 0.2s ease;
+    ;
 }
 
-.labels {
-    width: 158px;
-}
-
-.inputs input,
+input,
 textarea {
     margin: 15px 0;
     width: 330px;
@@ -643,7 +678,6 @@ textarea {
     line-height: 30px;
     letter-spacing: 0;
     text-align: right;
-    border-radius: 10px;
     padding: 1px 10px;
 }
 
@@ -656,13 +690,11 @@ textarea:focus {
 
 input:not(:placeholder-shown),
 textarea:not(:placeholder-shown) {
-    border-color: #3a86ff;
-    background-color: rgb(197 229 228);
-    box-shadow: inset 0 0 15px 0px rgb(0 0 0 / 61%);
+    border: 1px solid #3a86ff;
 }
 
-.flex {
-    display: flex;
+input:focus>input::placeholder {
+    color: #f1efec;
 }
 
 textarea {
@@ -682,24 +714,108 @@ textarea {
     border-radius: 8px 0 0 8px;
 }
 
+.captcha-container {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    gap: 10px;
+    position: absolute;
+    left: -20px;
+    top: 2px;
+}
+
+.captcha-code {
+    font-family: 'Babylonica';
+    font-size: 25px;
+    letter-spacing: -2px;
+    background: var(--card);
+    color: #333;
+    user-select: none;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 1px 1px 2px rgb(0 0 0);
+    filter: blur(0.3px) drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.2));
+    width: 136px;
+    height: 36px;
+    padding-left: 20px;
+    direction: ltr;
+}
+
+.captcha-code::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        linear-gradient(45deg, transparent 48%, rgba(0, 0, 0, 0.1) 49%, rgba(0, 0, 0, 0.1) 51%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(0, 0, 0, 0.1) 49%, rgba(0, 0, 0, 0.1) 51%, transparent 52%);
+    background-size: 6px 6px;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.captcha-code span {
+    display: inline-block;
+    transform: rotate(calc(var(--r) * 1deg)) scale(var(--s));
+    color: var(--text-black);
+    margin: 0 1px;
+}
+
+.refresh-btn {
+    background: #00000000;
+    color: var(--text-black);
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    position: relative;
+    right: -45px;
+}
+
+.refresh-btn:hover {
+    transform: rotate(90deg);
+}
+
+.refresh-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.error-message {
+    color: #ff3860;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+    font-family: 'BYekan';
+}
+
 /* From Uiverse.io by ryota1231 */
 .animated-button {
     position: relative;
     display: flex;
     align-items: center;
     gap: 4px;
-    padding: 16px 36px;
     border: none;
     font-size: 16px;
     background-color: #D4C9BE;
-    border-radius: 100px;
+    border-radius: 9999px;
     font-weight: 600;
     color: #1f387e;
     box-shadow: 0 0 0px 0px #ffffff;
     cursor: pointer;
     overflow: hidden;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    bottom: -20px;
+    width: 170px;
+    height: 48px;
+    justify-content: center;
+    left: -743px;
 }
 
 .animated-button svg {
@@ -747,7 +863,7 @@ textarea {
 .animated-button:hover {
     box-shadow: 0 0 0 12px transparent;
     color: #212121;
-    border-radius: 12px;
+    border-radius: 9999px;
 }
 
 .animated-button:hover .arr-1 {
@@ -789,7 +905,7 @@ footer {
     height: 314px;
     /* opacity: 0.6; */
     margin-top: 275px;
-    background: url(./footer-light.png) var(--recaptcha);
+    background: var(--footer) var(--recaptcha);
     background-size: cover;
     display: flex;
 }
@@ -862,6 +978,7 @@ footer a::after {
 footer a:hover::after {
     width: 100%;
 }
+
 [data-aos] {
     transition: all 0.6s ease;
 }
@@ -885,6 +1002,7 @@ footer a:hover::after {
     opacity: 1;
     transform: translateY(0);
 }
+
 [data-aos="fade-right"] {
     opacity: 0;
     transform: translateX(-30px);
@@ -904,6 +1022,7 @@ footer a:hover::after {
     opacity: 1;
     transform: translateX(0);
 }
+
 [data-aos="zoom-in"] {
     opacity: 0;
     transform: scale(0.9);
@@ -912,4 +1031,292 @@ footer a:hover::after {
 [data-aos="zoom-in"].aos-animate {
     opacity: 1;
     transform: scale(1);
+}
+
+/* استایل‌های جدید برای حالت ارور */
+.error-message {
+    color: #ff3860;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+    font-family: 'BYekan';
+    transition: all 0.3s ease;
+}
+
+input.error {
+    border-color: #ff3860 !important;
+    box-shadow: 0 0 0 2px rgba(255, 56, 96, 0.2) !important;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20%,
+    60% {
+        transform: translateX(-5px);
+    }
+
+    40%,
+    80% {
+        transform: translateX(5px);
+    }
+}
+
+.captcha-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ff3860;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+input.error~.captcha-container::after {
+    transform: scaleX(1);
+}
+
+@media (max-width: 430px) {
+    .header {
+        height: 45px;
+    }
+
+    .logo img {
+        width: 29px;
+        height: auto;
+    }
+
+    .logo h1 {
+        font-size: 7px;
+    }
+
+    .text-org {
+        padding: 20px 0 30px;
+    }
+
+    .text-org h1 {
+        font-size: 10px;
+    }
+
+    .text-org h2 {
+        font-size: 8px;
+    }
+
+    .card-introduce {
+        padding: 5px;
+    }
+
+    a.card-servic {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .services {
+        gap: 0px;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .servic h4 {
+        font-size: 8px;
+    }
+
+    .imgs {
+        width: 80px;
+    }
+
+    .png {
+        width: 50px;
+        top: 25px;
+        right: 22px;
+    }
+
+    img.bg-card {
+        width: 92px;
+    }
+
+    .text-servic {
+        padding: 15px;
+        background: none;
+    }
+
+    .text-servic>div,
+    .card-introduce {
+        background: url(./Group.png) var(--text-blue);
+        background-size: cover;
+        border-radius: 5px;
+        width: calc(100% - 10px);
+    }
+
+    .text-servic h4,
+    .card-introduce h3 {
+        font-size: 10px;
+        padding: 0 6px;
+        margin: 5px 0;
+    }
+
+    ul {
+        padding: 0px 20px 0 0;
+    }
+
+    li,
+    .card-introduce p {
+        font-size: 7px;
+        line-height: 20px;
+        text-align: justify;
+    }
+
+    section,
+    .servic {
+        padding: 15px;
+    }
+
+    form {
+        width: calc(100% - 10px);
+        padding: 5px;
+        align-items: center;
+        border-radius: 5px;
+    }
+
+    .servic h3,
+    #narmAfzar,
+    .moshtariyan h3,
+    .Contact h3 {
+        font-size: 10px;
+        text-align: right;
+    }
+
+    .moshtariyan p,
+    .Contact p {
+        font-size: 7px;
+        line-height: 20px;
+        padding: 0 0px 40px;
+    }
+
+    form input,
+    form textarea {
+        width: 186px;
+        height: 17px;
+        font-size: 10px;
+        letter-spacing: 0;
+        line-height: normal;
+        padding: 2px 7px;
+        border-radius: 2px;
+        border: none;
+        margin: 10px 0px;
+    }
+
+    form>div {
+        position: relative;
+        width: fit-content;
+    }
+
+    form label {
+        font-weight: 400;
+        font-size: 10px;
+        line-height: normal;
+        letter-spacing: 0;
+        text-align: right;
+        color: #757575;
+        position: absolute;
+        width: max-content;
+        right: 7px;
+        top: -2px;
+    }
+
+    .captcha-container {
+        left: -28px;
+        top: -5px;
+        border-radius: 2px;
+    }
+
+    textarea {
+        min-height: 70px;
+        padding: 3px 7px;
+        margin: 11px 0px;
+    }
+
+    .captcha-code {
+        font-size: 15px;
+        width: 68px;
+        height: 20px;
+        padding-left: 17px;
+        border-radius: 2px;
+    }
+
+    .refresh-btn {
+        padding: 4px;
+        right: -29px;
+    }
+
+    .refresh-btn svg {
+        width: 10px;
+        height: 10px;
+    }
+
+    .animated-button {
+        left: 0px;
+        width: 75px;
+        height: 20px;
+        padding: 0;
+    }
+
+    .animated-button svg {
+        width: 13px;
+    }
+
+    .animated-button .text {
+        font-size: 7px;
+    }
+
+    form input:focus+label,
+    form input:not(:placeholder-shown)+label,
+    form textarea:focus+label,
+    form textarea:not(:placeholder-shown)+label {
+        transform: translate(-2px, -15px);
+        font-size: 8px;
+        color: #000000;
+        background: #F1EFEC;
+        border-radius: 5px 5px 0 0;
+        padding: 1px 8px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    .logo-footer,
+    .flex2 {
+        padding: 0;
+    }
+
+    [data-aos="fade-right"] {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    [data-aos="fade-right"].aos-animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    [data-aos="fade-left"] {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    [data-aos="fade-left"].aos-animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

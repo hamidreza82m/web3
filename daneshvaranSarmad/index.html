@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فرم تماس با کد امنیتی</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --text-blue: #1a365d;
+            --card: #c3cfe2;
+            --error: #ff3860;
+        }
+
+        body {
+            font-family: 'BYekan', Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        form {
+            background: var(--text-blue);
+            width: 100%;
+            max-width: 913px;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .flex {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .labels {
+            width: 150px;
+            padding-right: 20px;
+        }
+
+        .labels label {
+            display: block;
+            margin: 15px 0;
+            font-size: 18px;
+            line-height: 40px;
+        }
+
+        .inputs {
+            flex: 1;
+        }
+
+        .inputs input,
+        .inputs textarea {
+            width: 100%;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* استایل‌های کپچا */
+        .captcha-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .captcha-code {
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            letter-spacing: 3px;
+            background: linear-gradient(135deg, #f5f7fa 0%, var(--card) 100%);
+            color: #333;
+            padding: 8px 15px;
+            border-radius: 8px;
+            user-select: none;
+            text-align: center;
+            min-width: 140px;
+            border: 1px dashed #3a86ff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .refresh-btn {
+            background: #3a86ff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .refresh-btn:hover {
+            background: #2667cc;
+        }
+
+        .error-message {
+            color: var(--error);
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .input-error {
+            border-color: var(--error) !important;
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-5px); }
+            40%, 80% { transform: translateX(5px); }
+        }
+
+        .submit-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            background: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <form id="contactForm">
+        <div class="flex">
+            <div class="labels">
+                <label for="name">نام و نام خانوادگی</label>
+                <label for="tel">شماره تماس</label>
+                <label for="email">ایمیل</label>
+            </div>
+            <div class="inputs">
+                <input type="text" id="name" placeholder="نام و نام‌خانوادگی خود را وارد کنید" required>
+                <input type="tel" id="tel" placeholder="شماره تماس خود را وارد کنید" required>
+                <input type="email" id="email" placeholder="ایمیل خود را وارد کنید" required>
+            </div>
+        </div>
+        <div class="flex">
+            <div class="labels">
+                <label for="message">پیام شما</label>
+            </div>
+            <div class="inputs">
+                <textarea id="message" placeholder="پیام خود را وارد کنید" required></textarea>
+            </div>
+        </div>
+        <div class="flex">
+            <div class="labels">
+                <label for="captcha-input">کد امنیتی</label>
+            </div>
+            <div class="inputs">
+                <div class="captcha-container">
+                    <div id="captcha-code" class="captcha-code"></div>
+                    <button type="button" id="refresh-captcha" class="refresh-btn" title="تولید کد جدید">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+                <input type="text" id="captcha-input" placeholder="کد نمایش داده شده را وارد کنید" autocomplete="off" required>
+                <div id="captcha-error" class="error-message"></div>
+            </div>
+        </div>
+        <button type="submit" class="submit-btn">ارسال درخواست</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // تابع تولید کپچا
+            function generateCaptcha() {
+                const chars = '0123456789';
+                let captcha = '';
+                for (let i = 0; i < 6; i++) {
+                    captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                
+                let distortedCaptcha = '';
+                for (let i = 0; i < captcha.length; i++) {
+                    const rotate = (Math.random() * 10) - 5;
+                    const scale = 0.8 + (Math.random() * 0.4);
+                    const hue = Math.random() * 60;
+                    const lightness = 40 + (Math.random() * 30);
+                    
+                    distortedCaptcha += `
+                        <span style="
+                            display: inline-block;
+                            transform: rotate(${rotate}deg) scale(${scale});
+                            color: hsl(${hue}, 70%, ${lightness}%);
+                            margin: 0 1px;
+                        ">${captcha.charAt(i)}</span>
+                    `;
+                }
+                
+                return {
+                    text: captcha,
+                    html: distortedCaptcha
+                };
+            }
+           
+            // متغیرهای مورد نیاز
+            let currentCaptcha = generateCaptcha();
+            const form = document.getElementById('contactForm');
+            const captchaCode = document.getElementById('captcha-code');
+            const refreshBtn = document.getElementById('refresh-captcha');
+            const captchaInput = document.getElementById('captcha-input');
+            const captchaError = document.getElementById('captcha-error');
+
+            // تابع به‌روزرسانی کپچا
+            function updateCaptcha() {
+                currentCaptcha = generateCaptcha();
+                captchaCode.innerHTML = currentCaptcha.html;
+                captchaInput.value = '';
+                resetCaptchaError();
+                console.log('کپچا به‌روز شد:', currentCaptcha.text);
+            }
+            
+            // تابع ریست خطای کپچا
+            function resetCaptchaError() {
+                captchaError.style.display = 'none';
+                captchaInput.classList.remove('input-error');
+            }
+
+            // تابع نمایش خطای کپچا
+            function showCaptchaError(message) {
+                captchaError.textContent = message;
+                captchaError.style.display = 'block';
+                captchaInput.classList.add('input-error');
+                captchaInput.focus();
+            }
+
+            // اعتبارسنجی کپچا
+            function validateCaptcha() {
+                const enteredCaptcha = captchaInput.value.trim().toUpperCase();
+                
+                if (!enteredCaptcha) {
+                    showCaptchaError('لطفاً کد امنیتی را وارد کنید');
+                    return false;
+                }
+                
+                if (enteredCaptcha !== currentCaptcha.text) {
+                    showCaptchaError('کد امنیتی نادرست است');
+                    updateCaptcha();
+                    return false;
+                }
+                
+                return true;
+            }
+
+            // اعتبارسنجی کلی فرم
+            function validateForm() {
+                let isValid = true;
+                
+                // اعتبارسنجی فیلدهای الزامی
+                const requiredFields = form.querySelectorAll('[required]');
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        field.classList.add('input-error');
+                        isValid = false;
+                    } else {
+                        field.classList.remove('input-error');
+                    }
+                });
+                
+                // اعتبارسنجی کپچا
+                if (!validateCaptcha()) {
+                    isValid = false;
+                }
+                
+                return isValid;
+            }
+
+            // مقداردهی اولیه کپچا
+            updateCaptcha();
+
+            // رویدادها
+            refreshBtn.addEventListener('click', updateCaptcha);
+
+            captchaInput.addEventListener('focus', resetCaptchaError);
+            captchaInput.addEventListener('input', resetCaptchaError);
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (validateForm()) {
+                    // شبیه‌سازی ارسال فرم
+                    console.log('فرم با موفقیت ارسال شد!');
+                    alert('فرم شما با موفقیت ارسال شد.');
+                    form.reset();
+                    updateCaptcha();
+                    
+                    // در حالت واقعی می‌توانید از fetch یا AJAX برای ارسال داده‌ها استفاده کنید
+                    /*
+                    fetch('آدرس سرور', {
+                        method: 'POST',
+                        body: new FormData(form)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Success:', data);
+                        alert('فرم شما با موفقیت ارسال شد.');
+                        form.reset();
+                        updateCaptcha();
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('خطا در ارسال فرم. لطفاً دوباره تلاش کنید.');
+                    });
+                    */
+                }
+            });
+        });
+    </script>
+</body>
+</html>

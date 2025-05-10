@@ -1,15 +1,3 @@
-function animation1() {
-    document.getElementById('yellow-navar').style.left = '75%';
-}
-function animation2() {
-    document.getElementById('yellow-navar').style.left = '50%';
-}
-function animation3() {
-    document.getElementById('yellow-navar').style.left = '25%';
-}
-function animation4() {
-    document.getElementById('yellow-navar').style.left = '0%';
-}
 
 let i = 0;
 scroll(i);
@@ -104,8 +92,9 @@ const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
 const img1 = document.getElementsByClassName('img-dark');
 const img2 = document.getElementsByClassName('img-light');
-const bg = document.getElementsByClassName('bg');
 const icons = document.getElementsByClassName('icons');
+const bg = document.getElementsByClassName('bg');
+const bgCard = document.getElementsByClassName('bg-card');
 
 if (localStorage.getItem('theme') === 'dark') {
     body.classList.add('dark-mode');
@@ -121,13 +110,13 @@ if (localStorage.getItem('theme') === 'dark') {
     Array.from(img2).forEach(img => {
         img.style.opacity = '0';
     });
-    Array.from(bg).forEach(img => {
-        img.style.mixBlendMode = 'color-burn';
+    Array.from(bgCard).forEach(img => {
+        img.src = './blob 2.png';
     });
     document.getElementById('logo').innerHTML = '<img src="./Clipped_image_20250407_134114 1.png" alt=""><h1>شر کت دانشوران سرمد</h1>';
     document.getElementById('logo-footer').innerHTML = '<img src="./Clipped_image_20250407_134114 1.png" alt=""><h1>شر کت دانشوران سرمد</h1>';
-    document.getElementById('footer').style.background = 'url(./footer-dark.png) var(--recaptcha)';
-    document.getElementById('footer').style.backgroundSize = 'cover';
+
+
 }
 
 themeToggle.addEventListener('change', function () {
@@ -146,12 +135,12 @@ themeToggle.addEventListener('change', function () {
         Array.from(bg).forEach(img => {
             img.style.mixBlendMode = 'normal';
         });
+        Array.from(bgCard).forEach(img => {
+            img.src = './blob 1.png';
+        });
         document.getElementById('logo').innerHTML = '<img src="./1000050309 1.png" alt=""><h1>شر کت دانشوران سرمد</h1>';
         document.getElementById('logo-footer').innerHTML = '<img src="./1000050309 1.png" alt=""><h1>شر کت دانشوران سرمد</h1>';
-        document.getElementById('footer').style.background = 'url(./footer-light.png) var(--recaptcha)';
-        document.getElementById('footer').style.backgroundSize = 'cover';
-
-
+        
 
     } else {
         body.classList.add('dark-mode');
@@ -168,25 +157,25 @@ themeToggle.addEventListener('change', function () {
         Array.from(bg).forEach(img => {
             img.style.mixBlendMode = 'color-burn';
         });
+        Array.from(bgCard).forEach(img => {
+            img.src = './blob 2.png';
+        });
         document.getElementById('logo').innerHTML = '<img src="./Clipped_image_20250407_134114 1.png" alt=""><h1>شر کت دانشوران سرمد</h1>';
         document.getElementById('logo-footer').innerHTML = '<img src="./Clipped_image_20250407_134114 1.png" alt=""><h1>شر کت دانشوران سرمد</h1>';
-        document.getElementById('footer').style.background = 'url(./footer-dark.png) var(--recaptcha)';
-        document.getElementById('footer').style.backgroundSize = 'cover';
-
     }
 });
 
 // اسکریپت مدیریت انیمیشن‌های اسکرول
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const elements = document.querySelectorAll('[data-aos]');
     
     function checkPosition() {
         const windowHeight = window.innerHeight;
         const scrollPosition = window.scrollY + (windowHeight * 0.8);
-        
+
         elements.forEach(element => {
             const elementPosition = element.offsetTop;
-            
+
             if (scrollPosition > elementPosition) {
                 element.classList.add('aos-animate');
             } else if (!element.getAttribute('data-aos-once')) {
@@ -194,11 +183,183 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     // اجرای اولیه
     checkPosition();
-    
+
     // اضافه کردن event listener
     window.addEventListener('scroll', checkPosition);
     window.addEventListener('resize', checkPosition);
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // تابع تولید کپچا
+    function generateCaptcha() {
+        const chars = '0123456789';
+        let captcha = '';
+        for (let i = 0; i < 6; i++) {
+            captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+
+        let distortedCaptcha = '';
+        for (let i = 0; i < captcha.length; i++) {
+            const rotate = (Math.random() * 10) - 5;
+            const scale = 0.8 + (Math.random() * 0.4);
+
+
+            distortedCaptcha += `
+                <span style="
+                    display: inline-block;
+                    transform: rotate(${rotate}deg) scale(${scale});
+                    margin: 0 1px;
+                ">${captcha.charAt(i)}</span>
+            `;
+        }
+
+        return {
+            text: captcha,
+            html: distortedCaptcha
+        };
+    }
+
+    // متغیرهای مورد نیاز
+    let currentCaptcha = generateCaptcha();
+    const form = document.getElementById('contactForm');
+    const captchaCode = document.getElementById('captcha-code');
+    const refreshBtn = document.getElementById('refresh-captcha');
+    const captchaInput = document.getElementById('captcha-input');
+    const captchaError = document.getElementById('captcha-error');
+
+    // تابع به‌روزرسانی کپچا
+    function updateCaptcha() {
+        currentCaptcha = generateCaptcha();
+        captchaCode.innerHTML = currentCaptcha.html;
+        captchaInput.value = '';
+        resetCaptchaError();
+        console.log('کپچا به‌روز شد:', currentCaptcha.text);
+    }
+
+    // تابع ریست خطای کپچا
+    function resetCaptchaError() {
+        captchaError.style.display = 'none';
+        captchaInput.classList.remove('input-error');
+    }
+
+    // تابع نمایش خطای کپچا
+    function showCaptchaError(message) {
+        captchaError.textContent = message;
+        captchaError.style.display = 'block';
+        captchaInput.classList.add('input-error');
+        captchaInput.focus();
+    }
+
+    // اعتبارسنجی کپچا
+    function validateCaptcha() {
+        const enteredCaptcha = captchaInput.value.trim().toUpperCase();
+
+        if (!enteredCaptcha) {
+            showCaptchaError('لطفاً کد امنیتی را وارد کنید');
+            return false;
+        }
+
+        if (enteredCaptcha !== currentCaptcha.text) {
+            showCaptchaError('کد امنیتی نادرست است');
+            updateCaptcha();
+            return false;
+        }
+
+        return true;
+    }
+
+    // اعتبارسنجی کلی فرم
+    function validateForm() {
+        let isValid = true;
+
+        // اعتبارسنجی فیلدهای الزامی
+        const requiredFields = form.querySelectorAll('[required]');
+        requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+                field.classList.add('input-error');
+                isValid = false;
+            } else {
+                field.classList.remove('input-error');
+            }
+        });
+
+        // اعتبارسنجی کپچا
+        if (!validateCaptcha()) {
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+    // مقداردهی اولیه کپچا
+    updateCaptcha();
+
+    // رویدادها
+    refreshBtn.addEventListener('click', updateCaptcha);
+
+    captchaInput.addEventListener('focus', resetCaptchaError);
+    captchaInput.addEventListener('input', resetCaptchaError);
+});
+
+emailjs.init('yEQZr60w4-prS55zF');
+document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const btn = document.querySelector('.submit-btn');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> در حال ارسال...';
+
+    emailjs.sendForm('service_tkwc1t2', 'template_5v7b2om', this)
+        .then(() => {
+            showAlert('پیام شما با موفقیت ارسال شد!', 'success');
+            this.reset();
+        })
+        .catch((error) => {
+            showAlert('خطا در ارسال پیام. لطفاً دوباره تلاش کنید.', 'error');
+            console.error('Failed:', error);
+        })
+        .finally(() => {
+            btn.disabled = false;
+            btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>
+                <span class="text">ارسال درخواست</span>
+                <span class="circle"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>`;
+        });
+});
+
+function showAlert(message, type) {
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `alert alert-${type}`;
+    alertDiv.innerHTML = `
+        <p>${message}</p>
+        <button class="close-alert">&times;</button>
+    `;
+
+    document.body.appendChild(alertDiv);
+
+    setTimeout(() => {
+        alertDiv.classList.add('show');
+    }, 100);
+
+    alertDiv.querySelector('.close-alert').addEventListener('click', () => {
+        alertDiv.classList.remove('show');
+        setTimeout(() => alertDiv.remove(), 300);
+    });
+
+    setTimeout(() => {
+        alertDiv.classList.remove('show');
+        setTimeout(() => alertDiv.remove(), 300);
+    }, 5000);
+};
