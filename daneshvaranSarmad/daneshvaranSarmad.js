@@ -61,6 +61,14 @@ function scroll(i) {
 
     }
 }
+let width = window.innerWidth;
+window.addEventListener("resize", () => {
+    resize();
+});
+const slides = document.getElementById('slides');
+function resize() {
+
+}
 
 const menu = document.getElementById('menu');
 const menu2 = document.getElementById('menu2');
@@ -113,7 +121,7 @@ if (localStorage.getItem('theme') === 'dark') {
     Array.from(bgCard).forEach(img => {
         img.src = './blob 2.png';
     });
-    document.getElementById('logo').innerHTML = '<img src="./Clipped_image_20250407_134114 1.png" alt=""><h1>شر کت دانشوران سرمد</h1>';
+    document.getElementById('logo').innerHTML = '<img src="./Clipped_image_20250407_134114 1.png" alt="">';
     document.getElementById('logo-footer').innerHTML = '<img src="./Clipped_image_20250407_134114 1.png" alt=""><h1>شر کت دانشوران سرمد</h1>';
 
 
@@ -138,9 +146,9 @@ themeToggle.addEventListener('change', function () {
         Array.from(bgCard).forEach(img => {
             img.src = './blob 1.png';
         });
-        document.getElementById('logo').innerHTML = '<img src="./1000050309 1.png" alt=""><h1>شر کت دانشوران سرمد</h1>';
+        document.getElementById('logo').innerHTML = '<img src="./1000050309 1.png" alt="">';
         document.getElementById('logo-footer').innerHTML = '<img src="./1000050309 1.png" alt=""><h1>شر کت دانشوران سرمد</h1>';
-        
+
 
     } else {
         body.classList.add('dark-mode');
@@ -160,7 +168,7 @@ themeToggle.addEventListener('change', function () {
         Array.from(bgCard).forEach(img => {
             img.src = './blob 2.png';
         });
-        document.getElementById('logo').innerHTML = '<img src="./Clipped_image_20250407_134114 1.png" alt=""><h1>شر کت دانشوران سرمد</h1>';
+        document.getElementById('logo').innerHTML = '<img src="./Clipped_image_20250407_134114 1.png" alt="">';
         document.getElementById('logo-footer').innerHTML = '<img src="./Clipped_image_20250407_134114 1.png" alt=""><h1>شر کت دانشوران سرمد</h1>';
     }
 });
@@ -168,7 +176,7 @@ themeToggle.addEventListener('change', function () {
 // اسکریپت مدیریت انیمیشن‌های اسکرول
 document.addEventListener('DOMContentLoaded', function () {
     const elements = document.querySelectorAll('[data-aos]');
-    
+
     function checkPosition() {
         const windowHeight = window.innerHeight;
         const scrollPosition = window.scrollY + (windowHeight * 0.8);

@@ -69,6 +69,9 @@ a {
     --dark-recaptcha: #123458;
     --dark-background: url(./Group2.png);
     --dark-footer: url(./footer-dark.png);
+    --dark-shadow: drop-shadow(1px 1px 10px #638BBE);
+
+
 
 
     /* تم روشن */
@@ -81,6 +84,10 @@ a {
     --light-recaptcha: #d4c9be;
     --light-background: url(./Mask\ group.png);
     --light-footer: url(./footer-light.png);
+    --light-shadow:drop-shadow( 4px 6px 11.9px #00000075);
+   
+
+
 
     --bg: var(--light-bg);
     --text-blue: var(--light-text-blue);
@@ -91,11 +98,7 @@ a {
     --recaptcha: var(--light-recaptcha);
     --background: var(--light-background);
     --footer: var(--light-footer);
-
-
-
-
-    --dark-card: #0a1a2f;
+    --shadow: var(--light-shadow);
 }
 
 body {
@@ -115,6 +118,7 @@ body.dark-mode {
     --recaptcha: var(--dark-recaptcha);
     --background: var(--dark-background);
     --footer: var(--dark-footer);
+    --shadow: var(--dark-shadow)
 }
 
 body.dark-mode .note {
@@ -288,8 +292,14 @@ body.dark-mode code {
 .card-introduce {
     background: url(./Curve\ Line\ 1.png) var(--text-blue);
     text-align: right;
+    filter: var(--shadow);
+
     padding: 70px;
     background-size: cover;
+}
+
+img.bg-card {
+    filter: var(--shadow);
 }
 
 .servic h3,
@@ -350,6 +360,7 @@ body.dark-mode code {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 50px;
+    filter: var(--shadow);
 }
 
 .text-servic h4 {
@@ -390,6 +401,8 @@ section.products {
 .product {
     max-width: 500px;
     background: var(--text-blue);
+    border-radius: 5px;
+    filter: var(--shadow);
 }
 
 @media (max-width: 996px) {
@@ -423,6 +436,7 @@ section.products {
     height: 17px;
     border: solid .3px #12345829;
     padding: 11px 10px;
+    border-radius: 5px 5px 0 0;
 }
 
 .product .title h5 {
@@ -443,7 +457,7 @@ section.products {
     flex-direction: column;
     justify-content: space-between;
     height: calc(100% - 76.8px);
-
+    border-radius: 5px;
 }
 
 .product .card-product p {
@@ -639,6 +653,9 @@ section.products {
     color: var(--text-black);
 
 }
+.text-servic{
+    gap: 8px;
+}
 
 .mini-circles {
     display: flex;
@@ -651,9 +668,11 @@ form {
     padding: 35px 17px 30px 50px;
     display: flex;
     flex-direction: column;
+    filter: var(--shadow);
+
 }
 
-label {
+form label {
     margin: 15px 0;
     font-family: 'BYekan';
     font-weight: 400;
@@ -666,8 +685,8 @@ label {
     ;
 }
 
-input,
-textarea {
+form input,
+form textarea {
     margin: 15px 0;
     width: 330px;
     height: 34px;
@@ -681,23 +700,14 @@ textarea {
     padding: 1px 10px;
 }
 
-input:focus,
-textarea:focus {
+form input:focus,
+form textarea:focus {
     outline: none;
     border-color: #3a86ff;
     box-shadow: 0 0 8px 2px rgb(104 163 255 / 35%);
 }
 
-input:not(:placeholder-shown),
-textarea:not(:placeholder-shown) {
-    border: 1px solid #3a86ff;
-}
-
-input:focus>input::placeholder {
-    color: #f1efec;
-}
-
-textarea {
+form textarea {
     width: 515px;
     min-height: 170px;
     resize: none;
@@ -728,7 +738,7 @@ textarea {
     font-family: 'Babylonica';
     font-size: 25px;
     letter-spacing: -2px;
-    background: var(--card);
+    background: var(--recaptcha);
     color: #333;
     user-select: none;
     text-align: center;
@@ -1033,39 +1043,6 @@ footer a:hover::after {
     transform: scale(1);
 }
 
-/* استایل‌های جدید برای حالت ارور */
-.error-message {
-    color: #ff3860;
-    font-size: 14px;
-    margin-top: 5px;
-    display: none;
-    font-family: 'BYekan';
-    transition: all 0.3s ease;
-}
-
-input.error {
-    border-color: #ff3860 !important;
-    box-shadow: 0 0 0 2px rgba(255, 56, 96, 0.2) !important;
-    animation: shake 0.5s ease-in-out;
-}
-
-@keyframes shake {
-
-    0%,
-    100% {
-        transform: translateX(0);
-    }
-
-    20%,
-    60% {
-        transform: translateX(-5px);
-    }
-
-    40%,
-    80% {
-        transform: translateX(5px);
-    }
-}
 
 .captcha-container::after {
     content: '';
@@ -1085,20 +1062,25 @@ input.error~.captcha-container::after {
 
 @media (max-width: 430px) {
     .header {
-        height: 45px;
+        height: 30px;
     }
 
     .logo img {
-        width: 29px;
+        width: 18px;
         height: auto;
     }
 
-    .logo h1 {
-        font-size: 7px;
+    .st-sunMoonThemeToggleBtn svg {
+        width: 15px;
+    }
+
+    .themeToggle {
+        width: auto;
+        height: 100%;
     }
 
     .text-org {
-        padding: 20px 0 30px;
+        padding: 5px 0 30px;
     }
 
     .text-org h1 {
@@ -1181,6 +1163,41 @@ input.error~.captcha-container::after {
         padding: 15px;
     }
 
+    .product {
+        width: 200px;
+        height: 110px;
+    }
+
+    .product .title {
+        height: 9px;
+        padding: 8px 10px;
+    }
+
+    .product .title h5 {
+        font-size: 8px;
+    }
+
+    .product .card-product {
+        padding: 10px;
+        height: calc(100% - 50px);
+    }
+
+    .product .card-product p {
+        font-size: 6px;
+    }
+
+    .button {
+        font-size: 6px;
+    }
+
+    .hashtak {
+        display: none;
+    }
+
+    .display-card {
+        justify-content: center;
+    }
+
     form {
         width: calc(100% - 10px);
         padding: 5px;
@@ -1207,7 +1224,7 @@ input.error~.captcha-container::after {
     form textarea {
         width: 186px;
         height: 17px;
-        font-size: 10px;
+        font-size: 8px;
         letter-spacing: 0;
         line-height: normal;
         padding: 2px 7px;
@@ -1223,7 +1240,7 @@ input.error~.captcha-container::after {
 
     form label {
         font-weight: 400;
-        font-size: 10px;
+        font-size: 8px;
         line-height: normal;
         letter-spacing: 0;
         text-align: right;
@@ -1234,24 +1251,36 @@ input.error~.captcha-container::after {
         top: -2px;
     }
 
-    .captcha-container {
-        left: -28px;
-        top: -5px;
-        border-radius: 2px;
+    #captcha-input {
+        width: 105px;
     }
 
-    textarea {
+    .inputs {
+        position: relative;
+        right: -40px;
+    }
+
+
+    .captcha-container {
+        left: -28px;
+        top: 10px;
+        border-radius: 2px;
+        margin: 0;
+    }
+
+    form textarea {
         min-height: 70px;
         padding: 3px 7px;
         margin: 11px 0px;
     }
 
     .captcha-code {
-        font-size: 15px;
-        width: 68px;
-        height: 20px;
-        padding-left: 17px;
+        font-size: 11px;
+        width: 48px;
+        height: 21px;
+        padding-left: 15px;
         border-radius: 2px;
+        align-content: center;
     }
 
     .refresh-btn {
@@ -1265,10 +1294,23 @@ input.error~.captcha-container::after {
     }
 
     .animated-button {
-        left: 0px;
-        width: 75px;
+        left: -68px;
+        top: -30px;
+        width: 69px;
         height: 20px;
         padding: 0;
+    }
+
+    span.text {
+        left: -8px;
+    }
+
+    .animated-button:hover .text {
+        transform: translateX(0px);
+    }
+
+    .animated-button .arr-1 {
+        right: 4px;
     }
 
     .animated-button svg {
@@ -1277,6 +1319,11 @@ input.error~.captcha-container::after {
 
     .animated-button .text {
         font-size: 7px;
+        left: 8px;
+    }
+
+    .animated-button:hover .arr-2 {
+        left: 9px;
     }
 
     form input:focus+label,
@@ -1293,10 +1340,34 @@ input.error~.captcha-container::after {
 
     footer {
         flex-direction: column;
+        margin-top: 100px;
+        height: auto;
     }
 
-    .logo-footer,
-    .flex2 {
+    div#logo-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #logo-footer img{
+        width: 18px;
+        height: auto;
+    }
+    .logo-footer h1 {
+        font-size: 6px;
+    }
+    .flex2 img {
+        margin: 0 10px;
+        width: 10px;
+    }
+    .font {
+        font-size: 6px;
+        word-spacing: 0.6px;
+    }
+    .logo-footer{
+        padding: 10px;
+    }
+    .flex2{
         padding: 0;
     }
 
