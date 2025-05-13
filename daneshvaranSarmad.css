@@ -69,7 +69,7 @@ a {
     --dark-recaptcha: #123458;
     --dark-background: url(./Group2.png);
     --dark-footer: url(./footer-dark.png);
-    --dark-shadow: drop-shadow(1px 1px 10px #638BBE);
+    --dark-shadow: drop-shadow(1px 1px 10px #638BBE7f);
 
 
 
@@ -84,7 +84,7 @@ a {
     --light-recaptcha: #d4c9be;
     --light-background: url(./Mask\ group.png);
     --light-footer: url(./footer-light.png);
-    --light-shadow:drop-shadow( 4px 6px 11.9px #00000075);
+    --light-shadow:drop-shadow( 3px 3px 10px #00000075);
    
 
 
@@ -141,9 +141,25 @@ body.dark-mode code {
     height: 120px;
     width: 100%;
 }
+#links{
+    display: flex;
+    gap: 90px;
+}
+#links a{
+    font-family: 'BYekan';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-align: right;
+    color: var(--text);
+}
 
 .logo {
     justify-items: center;
+    position: absolute;
+    top: 31px;
+    right: 80px;
 }
 
 .logo img {
@@ -173,7 +189,7 @@ body.dark-mode code {
 .st-sunMoonThemeToggleBtn {
     position: absolute;
     cursor: pointer;
-    left: 27px;
+    left: 70px;
 }
 
 .st-sunMoonThemeToggleBtn .themeToggleInput {
@@ -257,7 +273,9 @@ body.dark-mode code {
 .text-org {
     padding: 46px;
 }
-
+.org{
+    padding: 0 40px;
+}
 .text-org h1,
 .text-org h2 {
     font-family: 'Lalezar';
@@ -293,10 +311,11 @@ body.dark-mode code {
     background: url(./Curve\ Line\ 1.png) var(--text-blue);
     text-align: right;
     filter: var(--shadow);
-
-    padding: 70px;
+    padding: 30px;
     background-size: cover;
+    border-radius: 10px;
 }
+
 
 img.bg-card {
     filter: var(--shadow);
@@ -354,12 +373,16 @@ img.bg-card {
 }
 
 .text-servic {
-    padding: 50px;
+    padding: 10px;
     background: url(./Group.png) var(--text-blue);
     background-size: cover;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 50px;
+    margin: 0 40px;
+    border-radius: 10px;
+}
+.text-servic>div{
     filter: var(--shadow);
 }
 
@@ -648,7 +671,7 @@ section.products {
     line-height: 30px;
     letter-spacing: 0;
     text-align: justify;
-    padding: 25px 90px 70px;
+    padding: 25px 45px 70px;
     margin: 0;
     color: var(--text-black);
 
@@ -660,7 +683,12 @@ section.products {
 .mini-circles {
     display: flex;
 }
-
+.Contact{
+    padding: 45px 0 0 0;
+}
+.Contact p{
+    text-align: center;
+}
 form {
     background: url(./Mask\ group\ \(1\).png) var(--text-blue);
     width: 913px;
@@ -687,7 +715,7 @@ form label {
 
 form input,
 form textarea {
-    margin: 15px 0;
+    margin: 13px 0;
     width: 330px;
     height: 34px;
     background: #F1EFEC;
@@ -1248,7 +1276,7 @@ input.error~.captcha-container::after {
         position: absolute;
         width: max-content;
         right: 7px;
-        top: -2px;
+        top: 0px;
     }
 
     #captcha-input {
@@ -1330,7 +1358,7 @@ input.error~.captcha-container::after {
     form input:not(:placeholder-shown)+label,
     form textarea:focus+label,
     form textarea:not(:placeholder-shown)+label {
-        transform: translate(-2px, -15px);
+        transform: translate(-2px, -11px);
         font-size: 8px;
         color: #000000;
         background: #F1EFEC;
