@@ -98,31 +98,30 @@ function show() {
 }
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
-const img1 = document.getElementsByClassName('img-dark');
-const img2 = document.getElementsByClassName('img-light');
 const icons = document.getElementsByClassName('icons');
 const bg = document.getElementsByClassName('bg');
 const bgCard = document.getElementsByClassName('bg-card');
+const img1 = document.getElementById('img1')
+const img2 = document.getElementById('img2')
+const img3 = document.getElementById('img3')
 
 if (localStorage.getItem('theme') === 'dark') {
     body.classList.add('dark-mode');
     themeToggle.checked = false;
     body.classList.add('dark-mode');
     localStorage.setItem('theme', 'dark');
-    Array.from(icons).forEach(img => {
-        img.style.mixBlendMode = 'plus-lighter';
-    });
-    Array.from(img1).forEach(img => {
-        img.style.opacity = '1';
-    });
-    Array.from(img2).forEach(img => {
-        img.style.opacity = '0';
-    });
     Array.from(bgCard).forEach(img => {
         img.src = './blob 2.png';
     });
+    img1.src='./cloud-computing 1.png';
+    img2.src='./1000051715 1.png';
+    img3.src='./1000051714 1.png';
     document.getElementById('logo').innerHTML = '<img src="./Clipped_image_20250407_134114 1.png" alt="">';
     document.getElementById('logo-footer').innerHTML = '<img src="./Clipped_image_20250407_134114 1.png" alt=""><h1>شر کت دانشوران سرمد</h1>';
+    document.getElementById('location').src = 'location2.png';
+    document.getElementById('sms').src = 'sms2.png';
+    document.getElementById('mobile').src = 'mobile2.png';
+    document.getElementById('map').src = 'map2.png';
 
 
 }
@@ -131,45 +130,41 @@ themeToggle.addEventListener('change', function () {
     if (this.checked) {
         body.classList.remove('dark-mode');
         localStorage.setItem('theme', 'light');
-        Array.from(icons).forEach(img => {
-            img.style.mixBlendMode = 'normal';
-        });
-        Array.from(img1).forEach(img => {
-            img.style.opacity = '0';
-        });
-        Array.from(img2).forEach(img => {
-            img.style.opacity = '1';
-        });
         Array.from(bg).forEach(img => {
             img.style.mixBlendMode = 'normal';
         });
         Array.from(bgCard).forEach(img => {
             img.src = './blob 1.png';
         });
+        img1.src='./img1.png';
+        img2.src='./img2.png';
+        img3.src='./img3.png';
         document.getElementById('logo').innerHTML = '<img src="./1000050309 1.png" alt="">';
         document.getElementById('logo-footer').innerHTML = '<img src="./1000050309 1.png" alt=""><h1>شر کت دانشوران سرمد</h1>';
+        document.getElementById('location').src = 'location.png';
+        document.getElementById('sms').src = 'sms.png';
+        document.getElementById('mobile').src = 'mobile.png';
+        document.getElementById('map').src = 'map.png';
 
 
     } else {
         body.classList.add('dark-mode');
         localStorage.setItem('theme', 'dark');
-        Array.from(icons).forEach(img => {
-            img.style.mixBlendMode = 'plus-lighter';
-        });
-        Array.from(img1).forEach(img => {
-            img.style.opacity = '1';
-        });
-        Array.from(img2).forEach(img => {
-            img.style.opacity = '0';
-        });
         Array.from(bg).forEach(img => {
             img.style.mixBlendMode = 'color-burn';
         });
         Array.from(bgCard).forEach(img => {
             img.src = './blob 2.png';
         });
+        img1.src='./cloud-computing 1.png';
+        img2.src='./1000051715 1.png';
+        img3.src='./1000051714 1.png';
         document.getElementById('logo').innerHTML = '<img src="./Clipped_image_20250407_134114 1.png" alt="">';
         document.getElementById('logo-footer').innerHTML = '<img src="./Clipped_image_20250407_134114 1.png" alt=""><h1>شر کت دانشوران سرمد</h1>';
+        document.getElementById('location').src = 'location2.png';
+        document.getElementById('sms').src = 'sms2.png';
+        document.getElementById('mobile').src = 'mobile2.png';
+        document.getElementById('map').src = 'map2.png';
     }
 });
 
@@ -233,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // متغیرهای مورد نیاز
     let currentCaptcha = generateCaptcha();
-    const form = document.getElementById('contactForm');
+    const form = document.getElementById('contact-form');
     const captchaCode = document.getElementById('captcha-code');
     const refreshBtn = document.getElementById('refresh-captcha');
     const captchaInput = document.getElementById('captcha-input');
@@ -316,7 +311,9 @@ document.addEventListener('DOMContentLoaded', function () {
 emailjs.init('yEQZr60w4-prS55zF');
 document.getElementById('contact-form').addEventListener('submit', function (e) {
     e.preventDefault();
-
+    if (!validateForm()) {
+        return; // اگر اعتبارسنجی انجام نشد، هیچ کاری نکن
+    }
     const btn = document.querySelector('.submit-btn');
     btn.disabled = true;
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> در حال ارسال...';

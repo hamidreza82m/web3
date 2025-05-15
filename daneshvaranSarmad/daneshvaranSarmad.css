@@ -15,6 +15,7 @@
 
 html {
     scroll-behavior: smooth;
+    scrollbar-color: auto;
 }
 
 /* برای مرورگرهای مبتنی بر WebKit مانند کروم و سافاری */
@@ -69,8 +70,9 @@ a {
     --dark-recaptcha: #123458;
     --dark-background: url(./Group2.png);
     --dark-footer: url(./footer-dark.png);
-    --dark-shadow: drop-shadow(1px 1px 10px #638BBE);
-
+    --dark-shadow: drop-shadow(1px 1px 10px #638BBE7f);
+    --dark-shadow2: drop-shadow(1px 1px 10px #638BBE7f);
+    --dark-hover-fot: #afdcfd;
 
 
 
@@ -84,8 +86,10 @@ a {
     --light-recaptcha: #d4c9be;
     --light-background: url(./Mask\ group.png);
     --light-footer: url(./footer-light.png);
-    --light-shadow:drop-shadow( 4px 6px 11.9px #00000075);
-   
+    --light-shadow: drop-shadow(3px 3px 10px #00000075);
+    --light-shadow2: drop-shadow(1px 1px 10px #00000000);
+    --light-hover-fot: #15679d;
+
 
 
 
@@ -99,6 +103,8 @@ a {
     --background: var(--light-background);
     --footer: var(--light-footer);
     --shadow: var(--light-shadow);
+    --shadow2: var(--light-shadow2);
+    --hover-fot: var(--light-hover-fot);
 }
 
 body {
@@ -118,7 +124,9 @@ body.dark-mode {
     --recaptcha: var(--dark-recaptcha);
     --background: var(--dark-background);
     --footer: var(--dark-footer);
-    --shadow: var(--dark-shadow)
+    --shadow: var(--dark-shadow);
+    --shadow2: var(--dark-shadow2);
+    --hover-fot: var(--dark-hover-fot);
 }
 
 body.dark-mode .note {
@@ -138,12 +146,53 @@ body.dark-mode code {
     justify-content: center;
     align-items: center;
     background: #D4C9BE80;
-    height: 120px;
+    height: 94px;
     width: 100%;
+}
+
+#links {
+    display: flex;
+    gap: 90px;
+}
+
+#links a {
+    font-family: 'BYekan';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-align: right;
+    color: var(--text);
+}
+#links a:hover{
+    color: var(--dark-bg);
+    transform: scale(1);
+    transition: color .3s ease-in-out;
+    filter: drop-shadow(5px 5px 3px #00000090);
+}
+#links a::after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    background-color: var(--dark-bg);
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+}
+#links a:hover::after {
+    width: 100%;
+    left: 0%;
 }
 
 .logo {
     justify-items: center;
+    position: absolute;
+    top: 15px;
+    right: 80px;
 }
 
 .logo img {
@@ -173,7 +222,7 @@ body.dark-mode code {
 .st-sunMoonThemeToggleBtn {
     position: absolute;
     cursor: pointer;
-    left: 27px;
+    left: 70px;
 }
 
 .st-sunMoonThemeToggleBtn .themeToggleInput {
@@ -258,21 +307,29 @@ body.dark-mode code {
     padding: 46px;
 }
 
+.org {
+    padding: 0 40px;
+}
+
 .text-org h1,
 .text-org h2 {
     font-family: 'Lalezar';
     font-weight: 400;
-    font-size: 32px;
+    font-size: 26px;
     letter-spacing: 0;
     text-align: center;
     color: var(--text);
 }
 
+.text-org h2 {
+    font-size: 24px;
+}
+
 .card-introduce p {
     font-family: 'BYekan';
     font-weight: 400;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 18px;
+    line-height: 40px;
     letter-spacing: 0;
     text-align: right;
     color: var(--text-card);
@@ -282,24 +339,26 @@ body.dark-mode code {
 .card-introduce h3 {
     font-family: 'Lalezar';
     font-weight: 400;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 100%;
     letter-spacing: 0;
     color: var(--text-card);
     margin: 20px 0;
+    text-align: center;
 }
 
 .card-introduce {
     background: url(./Curve\ Line\ 1.png) var(--text-blue);
     text-align: right;
     filter: var(--shadow);
-
-    padding: 70px;
-    background-size: cover;
+    padding: 30px;
+    background-repeat: no-repeat;
+    border-radius: 10px;
 }
 
+
 img.bg-card {
-    filter: var(--shadow);
+    filter: var(--shadow2);
 }
 
 .servic h3,
@@ -354,15 +413,20 @@ img.bg-card {
 }
 
 .text-servic {
-    padding: 50px;
+    padding: 10px;
     background: url(./Group.png) var(--text-blue);
     background-size: cover;
+    background-attachment: fixed;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 50px;
-    filter: var(--shadow);
+    margin: 0 40px;
+    border-radius: 10px;
 }
 
+.text-servic>div {
+    filter: var(--shadow);
+}
 .text-servic h4 {
     font-family: 'Lalezar';
     font-weight: 400;
@@ -401,11 +465,15 @@ section.products {
 .product {
     max-width: 500px;
     background: var(--text-blue);
-    border-radius: 5px;
+    border-radius: 10px;
     filter: var(--shadow);
 }
 
-@media (max-width: 996px) {
+.product-phone {
+    display: none;
+}
+
+@media (max-width: 1024px) {
     .product {
         max-width: 400px;
     }
@@ -436,7 +504,7 @@ section.products {
     height: 17px;
     border: solid .3px #12345829;
     padding: 11px 10px;
-    border-radius: 5px 5px 0 0;
+    border-radius: 10px 10px 0 0;
 }
 
 .product .title h5 {
@@ -457,7 +525,7 @@ section.products {
     flex-direction: column;
     justify-content: space-between;
     height: calc(100% - 76.8px);
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .product .card-product p {
@@ -648,17 +716,26 @@ section.products {
     line-height: 30px;
     letter-spacing: 0;
     text-align: justify;
-    padding: 25px 90px 70px;
+    padding: 25px 45px 70px;
     margin: 0;
     color: var(--text-black);
 
 }
-.text-servic{
+
+.text-servic {
     gap: 8px;
 }
 
 .mini-circles {
     display: flex;
+}
+
+.Contact {
+    padding: 45px 0 0 0;
+}
+
+.Contact p {
+    text-align: center;
 }
 
 form {
@@ -669,7 +746,7 @@ form {
     display: flex;
     flex-direction: column;
     filter: var(--shadow);
-
+    border-radius: 10px
 }
 
 form label {
@@ -682,13 +759,14 @@ form label {
     text-align: right;
     color: #F1EFEC;
     transition: all 0.2s ease;
-    ;
+    padding: 0 35px;
+    width: 118px;
 }
 
 form input,
 form textarea {
-    margin: 15px 0;
-    width: 330px;
+    margin: 13px 0;
+    width: 55%;
     height: 34px;
     background: #F1EFEC;
     font-family: 'BYekan';
@@ -698,6 +776,8 @@ form textarea {
     letter-spacing: 0;
     text-align: right;
     padding: 1px 10px;
+    border-radius: 6px;
+    border: none;
 }
 
 form input:focus,
@@ -708,9 +788,15 @@ form textarea:focus {
 }
 
 form textarea {
-    width: 515px;
+    width: 55%;
     min-height: 170px;
     resize: none;
+}
+
+.display-input {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
 }
 
 .recaptcha {
@@ -729,9 +815,13 @@ form textarea {
     align-items: center;
     margin: 15px 0;
     gap: 10px;
-    position: absolute;
-    left: -20px;
-    top: 2px;
+    position: relative;
+    left: 155px;
+    top: -4px;
+}
+
+input#captcha-input {
+    width: 330px;
 }
 
 .captcha-code {
@@ -750,6 +840,7 @@ form textarea {
     height: 36px;
     padding-left: 20px;
     direction: ltr;
+    border-radius: 6px 0 0 6px;
 }
 
 .captcha-code::before {
@@ -969,7 +1060,7 @@ footer {
 }
 
 footer a:hover {
-    color: #4c7b9a;
+    color: var(--hover-fot);
     transform: scale(1);
     transition: all .3s ease-in-out;
 }
@@ -981,7 +1072,7 @@ footer a::after {
     left: 0;
     width: 0;
     height: 1px;
-    background-color: #4c7b9a;
+    background-color: var(--hover-fot);
     transition: all 0.3s ease;
 }
 
@@ -1060,9 +1151,399 @@ input.error~.captcha-container::after {
     transform: scaleX(1);
 }
 
-@media (max-width: 430px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+    .header {
+        height: 70px;
+    }
+
+    header a {
+        display: block;
+    }
+
+    .logo img {
+        width: 51px;
+        height: auto;
+    }
+
+    .st-sunMoonThemeToggleBtn svg {
+        width: 24px;
+    }
+
+    .logo {
+        top: auto;
+        right: 60px;
+    }
+
+    .st-sunMoonThemeToggleBtn {
+
+        left: 60px;
+    }
+
+    .org {
+        padding: 22px;
+    }
+
+    .themeToggle {
+        width: 25px;
+        height: auto;
+    }
+
+    .text-org {
+        padding: 5px 0 30px;
+    }
+
+    .text-org h1 {
+        font-size: 16px;
+    }
+
+    .text-org h2 {
+        font-size: 14px;
+    }
+
+    .card-introduce {
+        padding: 20px;
+    }
+
+    .card-introduce h3 {
+        text-align: center;
+    }
+
+    a.card-servic {
+        display: flex;
+        justify-content: space-evenly;
+        width: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services {
+        gap: 0px;
+        flex-direction: row;
+        align-items: center;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .servic h4 {
+        font-size: 12px;
+    }
+
+    .imgs {
+        width: auto;
+    }
+
+    .png {
+        width: 100px;
+        top: 25px;
+        right: 31px;
+    }
+
+    img.bg-card {
+        width: 157px;
+    }
+
+    .text-servic {
+        padding: 15px;
+        background: url(./Group.png) var(--text-blue);
+        margin: 0 20px;
+        filter: var(--shadow);
+        grid-template-columns: none;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .text-servic>div {
+        background: none;
+    }
+
+    .text-servic h4,
+    .card-introduce h3 {
+        font-size: 12px;
+        padding: 0 6px;
+        margin: 5px 0;
+    }
+
+    ul {
+        padding: 0px 20px 0 0;
+        margin: 0;
+    }
+
+    li,
+    .card-introduce p {
+        font-size: 10px;
+        line-height: 30px;
+        text-align: justify;
+    }
+
+    section.products {
+        padding: 60px 0;
+    }
+
+    .product {
+        width: 260px;
+        border-radius: 5px;
+
+    }
+
+    .display-cards {
+        gap: 55px 0px;
+        padding-top: 35px;
+    }
+
+    .product .card-product p {
+        font-size: 8px;
+    }
+
+    .product .title h5 {
+        font-size: 10px;
+    }
+
+    .arrow {
+        width: 12px;
+    }
+
+    .mini-circle {
+        width: 10px;
+        height: 10px;
+    }
+
+    .hashtak {
+        padding-top: 27px;
+    }
+
+    .product .card-product {
+        padding: 10px 5px 9px 15px;
+        height: calc(100% - 76.8px);
+        border-radius: 5px;
+    }
+
+    .product .title {
+        height: 10px;
+        padding: 9px 10px;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .hashtak h6 {
+        font-size: 6px;
+    }
+
+    .button {
+        font-size: 6px;
+    }
+
+    .slides {
+        margin-top: 30px;
+    }
+
+    section,
+    .servic,
+    .org {
+        padding: 15px;
+    }
+
+    .Contact {
+        padding: 60px;
+    }
+
+    .Contact p {
+        text-align: right;
+    }
+
+    form {
+        width: calc(100% - 10px);
+        padding: 40px 5px;
+        align-items: center;
+        border-radius: 10px;
+    }
+
+    .servic h3,
+    #narmAfzar,
+    .moshtariyan h3,
+    .Contact h3 {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .moshtariyan p,
+    .Contact p {
+        font-size: 12px;
+        line-height: 30px;
+        padding: 29px;
+    }
+
+    form input,
+    form textarea {
+        width: 395px;
+        height: 36px;
+        font-size: 12px;
+        letter-spacing: 0;
+        line-height: normal;
+        padding: 3px 16px;
+        border-radius: 5px;
+        border: none;
+        margin: 21px 0px;
+    }
+
+    form>div {
+        position: relative;
+        width: fit-content;
+    }
+
+    form label {
+        font-size: 12px;
+        line-height: normal;
+        letter-spacing: 0;
+        text-align: right;
+        color: #757575;
+        position: absolute;
+        width: max-content;
+        right: 18px;
+        top: 15px;
+        padding: 0;
+    }
+
+    input#captcha-input {
+        width: 205px;
+        height: 25px;
+    }
+
+    .inputs {
+        position: relative;
+        right: -95px;
+    }
+
+    form input::placeholder,
+    form textarea::placeholder {
+        color: transparent;
+    }
+
+    .captcha-container {
+        left: -29px;
+        top: 21px;
+        margin: 0;
+        position: absolute;
+    }
+
+    #label-captcha {
+        top: 12px;
+    }
+
+    form input:focus+label#label-captcha,
+    form input:not(:placeholder-shown)+label#label-captcha {
+        transform: translate(-2px, -15px);
+    }
+
+    form textarea {
+        min-height: 150px;
+        padding: 4px 16px;
+    }
+
+    .captcha-code {
+        font-size: 11px;
+        width: 100px;
+        height: 31px;
+        padding-left: 15px;
+        border-radius: 5px 0 0 5px;
+        align-content: center;
+    }
+
+    .refresh-btn {
+        padding: 4px;
+        right: -29px;
+    }
+
+    .refresh-btn svg {
+        width: 10px;
+        height: 10px;
+    }
+
+    .animated-button {
+        left: -165px;
+        top: -53px;
+        width: 97px;
+        height: 33px;
+        padding: 0;
+    }
+
+    span.text {
+        left: -8px;
+    }
+
+    .animated-button:hover .text {
+        transform: translateX(0px);
+    }
+
+    .animated-button .arr-1 {
+        right: 4px;
+    }
+
+    .animated-button svg {
+        width: 13px;
+    }
+
+    .animated-button .text {
+        font-size: 11px;
+        left: 8px;
+    }
+
+    .animated-button:hover .arr-2 {
+        left: 9px;
+    }
+
+    form input:focus+label,
+    form input:not(:placeholder-shown)+label,
+    form textarea:focus+label,
+    form textarea:not(:placeholder-shown)+label {
+        transform: translate(-2px, -21px);
+        font-size: 8px;
+        color: #000000;
+        background: #F1EFEC;
+        border-radius: 5px 5px 0 0;
+        padding: 1px 8px;
+    }
+
+    footer {
+        margin-top: 150px;
+        height: 300px;
+    }
+
+    .logo-footer img {
+        width: 47px;
+        height: 31px;
+    }
+
+    .logo-footer h1 {
+        font-size: 10px;
+    }
+
+    .logo-footer {
+        padding: 20px 26px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .flex2 {
+        padding: 89px 20px 0 0;
+    }
+
+    .flex2>div {
+        padding: 10px 0;
+    }
+
+    .font {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 767px) {
     .header {
         height: 30px;
+    }
+
+    header a {
+        display: none;
     }
 
     .logo img {
@@ -1074,9 +1555,19 @@ input.error~.captcha-container::after {
         width: 15px;
     }
 
+    .logo {
+        top: auto;
+        right: auto;
+    }
+
+    .st-sunMoonThemeToggleBtn {
+
+        left: 15px;
+    }
+
     .themeToggle {
-        width: auto;
-        height: 100%;
+        width: 25px;
+        height: auto;
     }
 
     .text-org {
@@ -1130,6 +1621,7 @@ input.error~.captcha-container::after {
     .text-servic {
         padding: 15px;
         background: none;
+        margin: 0;
     }
 
     .text-servic>div,
@@ -1159,13 +1651,26 @@ input.error~.captcha-container::after {
     }
 
     section,
-    .servic {
+    .servic,
+    .org {
         padding: 15px;
     }
 
     .product {
         width: 200px;
         height: 110px;
+    }
+
+    section.products {
+        padding: 15px 0 10px;
+    }
+
+    .product-phone {
+        display: block;
+    }
+
+    .product-pc {
+        display: none;
     }
 
     .product .title {
@@ -1182,6 +1687,12 @@ input.error~.captcha-container::after {
         height: calc(100% - 50px);
     }
 
+    .display-cards {
+        gap: 25px;
+        padding-top: 11px;
+        grid-template-columns: none;
+    }
+
     .product .card-product p {
         font-size: 6px;
     }
@@ -1196,6 +1707,31 @@ input.error~.captcha-container::after {
 
     .display-card {
         justify-content: center;
+    }
+
+    .Contact {
+        padding: 15px;
+    }
+
+    .Contact p {
+        text-align: right;
+    }
+
+    #button-view {
+        filter: drop-shadow(-2px 8px 2px #000000aa);
+        animation: move 1s ease-in-out infinite;
+    }
+
+    @keyframes move {
+
+        0%,
+        100% {
+            transform: translateY(3px);
+        }
+
+        50% {
+            transform: translateY(0px);
+        }
     }
 
     form {
@@ -1239,7 +1775,6 @@ input.error~.captcha-container::after {
     }
 
     form label {
-        font-weight: 400;
         font-size: 8px;
         line-height: normal;
         letter-spacing: 0;
@@ -1248,10 +1783,11 @@ input.error~.captcha-container::after {
         position: absolute;
         width: max-content;
         right: 7px;
-        top: -2px;
+        top: 0px;
+        padding: 0;
     }
 
-    #captcha-input {
+    input#captcha-input {
         width: 105px;
     }
 
@@ -1260,18 +1796,22 @@ input.error~.captcha-container::after {
         right: -40px;
     }
 
+    form input::placeholder,
+    form textarea::placeholder {
+        color: transparent;
+    }
 
     .captcha-container {
         left: -28px;
         top: 10px;
         border-radius: 2px;
         margin: 0;
+        position: absolute;
     }
 
     form textarea {
         min-height: 70px;
         padding: 3px 7px;
-        margin: 11px 0px;
     }
 
     .captcha-code {
@@ -1279,7 +1819,7 @@ input.error~.captcha-container::after {
         width: 48px;
         height: 21px;
         padding-left: 15px;
-        border-radius: 2px;
+        border-radius: 2px 0 0 2px;
         align-content: center;
     }
 
@@ -1330,7 +1870,7 @@ input.error~.captcha-container::after {
     form input:not(:placeholder-shown)+label,
     form textarea:focus+label,
     form textarea:not(:placeholder-shown)+label {
-        transform: translate(-2px, -15px);
+        transform: translate(-2px, -13px);
         font-size: 8px;
         color: #000000;
         background: #F1EFEC;
@@ -1349,26 +1889,36 @@ input.error~.captcha-container::after {
         flex-direction: column;
         align-items: center;
     }
-    #logo-footer img{
+
+    #logo-footer img {
         width: 18px;
         height: auto;
     }
+
     .logo-footer h1 {
         font-size: 6px;
     }
+
     .flex2 img {
         margin: 0 10px;
         width: 10px;
     }
+
     .font {
         font-size: 6px;
         word-spacing: 0.6px;
     }
-    .logo-footer{
+
+    .logo-footer {
         padding: 10px;
     }
-    .flex2{
+
+    .flex2 {
         padding: 0;
+    }
+
+    .flex2>div {
+        padding: 7px 0;
     }
 
     [data-aos="fade-right"] {
