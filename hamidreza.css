@@ -145,12 +145,17 @@ body {
     display: none;
 }
 
+.filter-blur {
+    filter: brightness(0.2) blur(2px);
+}
+
 /* بخش هیرو */
 .hero-section {
     min-height: 100vh;
     display: flex;
     align-items: center;
     padding-top: 100px;
+     background-image: linear-gradient(271deg, #0a0a0a, #000000c2), url(./code-938776_1280.png);
 }
 
 .hero-content {
@@ -489,13 +494,14 @@ body {
 
 .portfolio-overlay h3 {
     margin-bottom: 10px;
-    font-size: 1.5rem;
+    font-size: 1.23rem;
     color: var(--primary-color);
 }
 
 .portfolio-overlay p {
     color: var(--text-secondary);
     margin-bottom: 20px;
+    font-size: 14px;
 }
 
 .portfolio-link {
@@ -508,6 +514,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
+    z-index: 20;
     transition: var(--transition);
 }
 
@@ -682,16 +689,25 @@ body {
 @media (max-width: 768px) {
     .nav-links {
         position: fixed;
-        top: 80px;
+        top: 95px;
         right: -100%;
-        width: 80%;
-        height: calc(100vh - 80px);
+        width: 60%;
+        height: calc(100vh - 95px);
         background-color: var(--dark-card);
         flex-direction: column;
         align-items: center;
         justify-content: center;
         transition: var(--transition);
-        gap: 30px;
+        gap: 9px;
+        box-shadow: -15px 0px 36px 11px #000;
+        background: linear-gradient(135deg, #020008e6, #181818e3);
+    }
+
+    .nav-links li {
+        margin-right: 0px;
+        padding: 10px 0;
+        width: 67%;
+        text-align: center;
     }
 
     .nav-links.active {
@@ -703,11 +719,11 @@ body {
     }
 
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 1.5rem;
     }
 
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .hero-buttons {
@@ -719,6 +735,16 @@ body {
     .portfolio-grid {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
+    .about-text p {
+    font-size: .9rem;
+    }
+    .hero-description {
+    font-size: .9rem;
+    }
+    .container {
+    width: 92%;
+    padding: 0 0px;
+}
 }
 
 @media (max-width: 992px) {
@@ -730,11 +756,11 @@ body {
 
 @media (max-width: 576px) {
     .hero-title {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.3rem;
     }
 
     .about-info {
@@ -813,8 +839,8 @@ body {
 }
 
 form input:focus+.labels,
-form input:not(:placeholder-shown)+.labels
-,form textarea:focus+.labels,
+form input:not(:placeholder-shown)+.labels,
+form textarea:focus+.labels,
 form textarea:not(:placeholder-shown)+.labels {
     transform: translate(-10%, -35px);
     font-size: 14px;
@@ -830,17 +856,18 @@ form textarea:not(:placeholder-shown)+.labels {
     position: relative;
 }
 
-form input::placeholder
-,form textarea::placeholder {
+form input::placeholder,
+form textarea::placeholder {
     color: transparent;
 }
 
-input:not(:placeholder-shown)
-,textarea:not(:placeholder-shown) {
+input:not(:placeholder-shown),
+textarea:not(:placeholder-shown) {
     border-color: #3a86ff;
     background-color: rgba(58, 134, 255, 0.1);
     box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.2);
 }
+
 /* استایل بخش تحصیلات */
 .education-item {
     margin: 25px 0;
@@ -891,7 +918,7 @@ input:not(:placeholder-shown)
     .education-item {
         padding: 12px;
     }
-    
+
     .education-details p {
         flex-direction: column;
         align-items: flex-start;
