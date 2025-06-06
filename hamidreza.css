@@ -692,10 +692,10 @@ body {
 @media (max-width: 768px) {
     .nav-links {
         position: fixed;
-        top: 95px;
+        top: 68px;
         right: -100%;
         width: 60%;
-        height: calc(100vh - 95px);
+        height: calc(100vh - 68px);
         background-color: var(--dark-card);
         flex-direction: column;
         align-items: center;
