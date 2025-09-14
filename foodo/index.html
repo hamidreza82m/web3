@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>foodo — منوی فست فود</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <header class="top" data-aos="fade-down">
+        <div class="brand">
+            <div class="logo"><img src="img/9.png" alt=""></div>
+            <div class="name-logo">
+                <h1>foodo</h1>
+                <p>منوی آنلاین فست فود فودو</p>
+            </div>
+        </div>
+
+        <div class="contact">
+            <div class="phone"><a href="tel:+988632233600">تلفن: 32233600-086</a> </div>
+            <a href="https://maps.app.goo.gl/B25P91T1WzeYkd3r6" class="address"><lord-icon
+                    src="https://cdn.lordicon.com/onmwuuox.json" trigger="loop" delay="20" state="hover-jump-roll"
+                    colors="primary:#d4ae3a,secondary:#9b9b9b" style="width:20px;height:20px">
+                </lord-icon>آدرس: خیابان امام، بین کوچه ملت
+                واسرافیلی عراقی</a>
+            <a class="page" href="https://www.instagram.com/foodo_fastfood?igsh=Y296dzduZ2trNWx4">
+                <lord-icon src="https://cdn.lordicon.com/wgtaryar.json" trigger="loop" delay="20"
+                    colors="primary:#3080e8,secondary:#e83a30,tertiary:#ffc738,quaternary:#ebe6ef"
+                    style="width:20px;height:20px">
+                </lord-icon>
+                foodo_fastfood
+            </a>
+        </div>
+    </header>
+
+    <section class="controls">
+        <input type="search" id="q" placeholder="جستجو نام غذا یا توضیحات..." />
+        <div class="categories">
+            <button class="cat-btn active" data-cat="all">همه</button>
+            <button class="cat-btn" data-cat="burger">برگر</button>
+            <button class="cat-btn" data-cat="Snack">اسنک</button>
+            <button class="cat-btn" data-cat="Sandwich">ساندویچ</button>
+            <button class="cat-btn" data-cat="tork">تست ترکی</button>
+            <button class="cat-btn" data-cat="sides">پیش غذا</button>
+            <!-- <button class="cat-btn" data-cat="drinks">نوشیدنی</button> -->
+        </div>
+    </section>
+
+    <main>
+        <div class="menu-grid" id="menu"></div>
+    </main>
+
+    <!-- modal preview -->
+    <div class="modal" id="modal" aria-hidden="true">
+        <div class="box">
+            <img id="modalImg" src="" alt="">
+            <div class="meta">
+                <div>
+                    <div id="modalTitle" style="font-weight:700;font-size:18px;color:var(--gold)"></div>
+                    <div id="modalDesc" style="color:var(--muted);font-size:13px;margin-top:6px"></div>
+                </div>
+                <div style="text-align:left">
+                    <div id="modalPrice" style="font-weight:800;color:var(--gold)"></div>
+                    <div style="margin-top:6px"><button class="btn" id="closeBtn">بستن</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        منوی فست فود<strong>فودو</strong>
+    </footer>
+    <script src="./index.js"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+
+</body>
+
+</html>
